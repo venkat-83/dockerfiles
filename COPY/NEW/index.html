@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title> WeddingBazaar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav id="nav">
+  <a class="nav-logo" href="#">Wedding<em>Bazaar</em></a>
+
+  <ul class="nav-links">
+    <li><a href="#vendors">Vendors</a></li>
+    <li><a href="#booking">Booking</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#packages">Packages</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button class="nav-btn">Sign In</button>
+    <button class="nav-btn solid">Start Planning</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#vendors"  onclick="closeMenu()">Vendors</a></li>
+    <li><a href="#booking"  onclick="closeMenu()">Booking</a></li>
+    <li><a href="#videos"   onclick="closeMenu()">Videos</a></li>
+    <li><a href="#tools"    onclick="closeMenu()">Tools</a></li>
+    <li><a href="#packages" onclick="closeMenu()">Packages</a></li>
+  </ul>
+  <div class="mobile-btns">
+    <button class="nav-btn">Sign In</button>
+    <button class="nav-btn solid">Start Planning</button>
+  </div>
+</div>
+  
+
+<section id="hero">
+  <div class="hero-l">
+    <div class="hero-eyebrow tag fade in" style="color: var(--gold2);">India's Premier Luxury Wedding Platform</div>
+    <h1 class="hero-h1 fade in stagger-1">
+      Every Love Story
+      <span>Deserves Magic</span>
+    </h1>
+    <p class="hero-sub fade in stagger-2" style="color: black;">AI-powered vendor discovery, real-time booking, smart budget planning — everything you need to craft your perfect celebration, beautifully.</p>
+    <div class="hero-btns fade in stagger-3" style="display: flex; gap: 16px; margin-top: 2rem;" >
+      <a href="#chatbot" class="btn-gold" style="border-radius: 10px;">✦ Chat with AI Planner</a>
+      <a href="#vendors" class="btn-outline" style="margin-top: 10px;">Browse Vendors →</a>
+    </div>
+    <div class="hero-stats fade in stagger-4">
+      <div>
+        <div class="hero-stat-num">12<em>K+</em></div>
+        <div class="hero-stat-label">Verified vendors</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">2.4<em>L</em></div>
+        <div class="hero-stat-label">Weddings planned</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">98<em>%</em></div>
+        <div class="hero-stat-label">Happy couples</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hero-grid">
+      <div class="hg-cell span-row" id="venue-hyderabad" style="background:#1a1208;overflow:hidden;position:relative; border-radius: 10px;">
+        <div class="venue-slide active" style="position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 1s ease;background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d1/Charminar-Pride_of_Hyderabad.jpg')"></div>
+        <div class="venue-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;background-image:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80')"></div>
+        <div class="venue-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;background-image:url('https://images.unsplash.com/photo-1510076857177-7470076d4098?w=800&q=80')"></div>
+        <div class="venue-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;background-image:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80')"></div>
+        <div class="hg-overlay" style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(22,18,10,.65) 0%,transparent 50%)"></div>
+        <!-- dot indicators -->
+        <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3;">
+          <span class="venue-dot active-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.9);transition:background .3s;"></span>
+          <span class="venue-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+          <span class="venue-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+          <span class="venue-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+        </div>
+        <div class="hg-label" style="z-index:2;position:absolute;bottom:14px;left:14px; border-radius: 10px; color: goldenrod;">Place Venue · Hyderabad</div>
+      </div>
+
+       <div class="hg-cell" id="bridal-couture" style="background:#1a1010;overflow:hidden;position:relative; border-radius: 10px;">
+        <div class="bridal-slide active" style="position:absolute;inset:0;background-size:cover;background-position:center top;transition:opacity 1s ease;background-image:url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80')"></div>
+        <div class="bridal-slide" style="position:absolute;inset:0;background-size:cover;background-position:center top;opacity:0;transition:opacity 1s ease;background-image:url('https://tse1.mm.bing.net/th/id/OIP.WFKsOeeo3uuWuJBPej8EjQHaLH?rs=1&pid=ImgDetMain&o=7&rm=3')"></div>
+        <div class="bridal-slide" style="position:absolute;inset:0;background-size:cover;background-position:center top;opacity:0;transition:opacity 1s ease;background-image:url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hbz-zuhairmurad-couture2018-1-1516910239.jpg?crop=1xw:1xh;center,top&resize=480:*')"></div>
+        <div class="bridal-slide" style="position:absolute;inset:0;background-size:cover;background-position:center top;opacity:0;transition:opacity 1s ease;background-image:url('https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&q=80')"></div>
+        <div class="hg-overlay" style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(22,18,10,.65) 0%,transparent 50%)"></div>
+        <!-- dot indicators -->
+        <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3;">
+          <span class="bridal-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.9);transition:background .3s;"></span>
+          <span class="bridal-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+          <span class="bridal-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+          <span class="bridal-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+        </div>
+        <div class="hg-label" style="z-index:2;position:absolute;bottom:14px;left:14px; border-radius: 10px; color: goldenrod;">Bridal Couture</div>
+      </div>
+
+         <div class="hg-cell" id="floral-artistry" style="background:#101a10;overflow:hidden;position:relative; border-radius: 10px;">
+        <div class="floral-slide active" style="position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 1s ease;background-image:url('https://flirtyfleurs.com/wp-content/uploads/2017/08/Floral-Artistry-Vermont.jpg')"></div>
+        <div class="floral-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;background-image:url('https://images.squarespace-cdn.com/content/v1/59a7aa59f9a61e6c2d0798d8/1560802522476-PZAGBXYXXR5OF4SJT9XT/living+with+flowers+1.JPG')"></div>
+        <div class="floral-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;background-image:url('https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?w=600&q=80')"></div>
+        <div class="floral-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;background-image:url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b?w=600&q=80')"></div>
+        <div class="hg-overlay" style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(22,18,10,.65) 0%,transparent 50%)"></div>
+        <!-- dot indicators -->
+        <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3;">
+          <span class="floral-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.9);transition:background .3s;"></span>
+          <span class="floral-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+          <span class="floral-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+          <span class="floral-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+        </div>
+        <div class="hg-label" style="z-index:2;position:absolute;bottom:14px;left:14px; border-radius: 10px; color: goldenrod;">Floral Artistry</div>
+      </div>
+      <div class="hg-cell" id="floral-artistry" style="background:#101a10;overflow:hidden;position:relative; border-radius: 10px;">
+        <div class="floral-slide active" style="position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 1s ease;background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGepdAwjoHMUOYLULFGtgFl8OeTBJdwBCrxw&s')"></div>
+        <div class="floral-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;background-image:url('https://uc.uncg.edu/wp-content/uploads/2023/05/PIC40215-URE_IARc_Class_Trip_Wild_Dunes_2966_1920px-1024x683.jpg')"></div>
+        <div class="floral-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;background-image:url('https://upload.wikimedia.org/wikipedia/commons/2/2b/Photographer_Photographing_Nevada_Mountains.jpg')"></div>
+        <div class="floral-slide" style="position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMWiUEZKb1QTPU7hluhiLn487V_wbQID5RkQ&s')"></div>
+        <div class="hg-overlay" style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(22,18,10,.65) 0%,transparent 50%)"></div>
+        <!-- dot indicators -->
+        <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3;">
+          <span class="floral-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.9);transition:background .3s;"></span>
+          <span class="floral-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+          <span class="floral-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+          <span class="floral-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s;"></span>
+        </div>
+        <div class="hg-label" style="z-index:2;position:absolute;bottom:14px;left:14px; border-radius: 10px; color: goldenrod;">Photographer</div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ══ -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item">AI Vendor Discovery</div>
+    <div class="marquee-item">Smart Budget Planner</div>
+    <div class="marquee-item">Live Booking Calendar</div>
+    <div class="marquee-item">Digital Invitations</div>
+    <div class="marquee-item">Honeymoon Packages</div>
+    <div class="marquee-item">Video Consultations</div>
+    <div class="marquee-item">Photo Book Printing</div>
+    <div class="marquee-item">Regional Language Support</div>
+    <div class="marquee-item">Secure Online Payments</div>
+    <div class="marquee-item">AI Vendor Discovery</div>
+    <div class="marquee-item">Smart Budget Planner</div>
+    <div class="marquee-item">Live Booking Calendar</div>
+    <div class="marquee-item">Digital Invitations</div>
+    <div class="marquee-item">Honeymoon Packages</div>
+    <div class="marquee-item">Video Consultations</div>
+    <div class="marquee-item">Photo Book Printing</div>
+    <div class="marquee-item">Regional Language Support</div>
+    <div class="marquee-item">Secure Online Payments</div>
+  </div>
+</div>
+
+<!-- ══ EVERYTHING YOU NEED SECTION ══ -->
+<section class="section" id="features">
+
+  <!-- Section Header -->
+  <div class="s-head">
+    <div class="s-head-left">
+      <div class="s-num" style="color: var(--gold);"></div>
+      <h2 class="s-title" style="color: black;">Everything You <i>Need</i></h2>
+      <p class="s-subtitle">20+ intelligent tools crafted for the modern Indian wedding</p>
+    </div>
+    <a href="#" class="see-all-btn">All Features →</a>
+  </div>
+
+  <!-- Feature Cards Grid -->
+  <div class="features-grid">
+
+    <a class="feat-card" href="#chatbot">
+      <div class="fc-icon-wrap">🤖</div>
+      <div class="fc-tag">01 — AI</div>
+      <div class="fc-name">AI Chatbot Planner</div>
+      <p class="fc-desc">Guided vendor discovery with intelligent recommendations tailored to your taste and budget.</p>
+      <span class="fc-arrow">→</span>
+    </a>
+
+    <a class="feat-card" href="#planner">
+      <div class="fc-icon-wrap">💰</div>
+      <div class="fc-tag">02 — Finance</div>
+      <div class="fc-name">Smart Budget Planner</div>
+      <p class="fc-desc">Auto-suggests vendors within your price range. Track spends, allocate categories, stay on budget.</p>
+      <span class="fc-arrow">→</span>
+    </a>
+
+    <a class="feat-card" href="#booking">
+      <div class="fc-icon-wrap">📅</div>
+      <div class="fc-tag">03 — Booking</div>
+      <div class="fc-name">Live Availability Calendar</div>
+      <p class="fc-desc">Real-time slot availability. Book vendors with instant confirmation in just a few taps.</p>
+      <span class="fc-arrow">→</span>
+    </a>
+
+    <a class="feat-card" href="#videos">
+      <div class="fc-icon-wrap">🎬</div>
+      <div class="fc-tag">04 — Video</div>
+      <div class="fc-name">Video Consultations</div>
+      <p class="fc-desc">Schedule face-to-face video calls with vendors. Review portfolios and discuss your vision live.</p>
+      <span class="fc-arrow">→</span>
+    </a>
+
+    <a class="feat-card" href="#invitations">
+      <div class="fc-icon-wrap">✉️</div>
+      <div class="fc-tag">05 — Design</div>
+      <div class="fc-name">Digital Invitation Generator</div>
+      <p class="fc-desc">Create stunning digital wedding invitations with custom templates, fonts, and multilingual support.</p>
+      <span class="fc-arrow">→</span>
+    </a>
+
+    <a class="feat-card" href="#photobook">
+      <div class="fc-icon-wrap">📖</div>
+      <div class="fc-tag">06 — Memories</div>
+      <div class="fc-name">Photo Book Printing</div>
+      <p class="fc-desc">Design and order premium wedding photo books. Lay-flat albums, fine art prints, custom covers.</p>
+      <span class="fc-arrow">→</span>
+    </a>
+
+    <a class="feat-card" href="#packages">
+      <div class="fc-icon-wrap">✈️</div>
+      <div class="fc-tag">07 — Travel</div>
+      <div class="fc-name">Honeymoon Packages</div>
+      <p class="fc-desc">Curated honeymoon travel packages at exclusive wedding rates. Domestic and international escapes.</p>
+      <span class="fc-arrow">→</span>
+    </a>
+
+    <a class="feat-card" href="#tools">
+      <div class="fc-icon-wrap">🎫</div>
+      <div class="fc-tag">08 — Support</div>
+      <div class="fc-name">Complaint Tracking</div>
+      <p class="fc-desc">Ticket-based complaint resolution system. Track status, get updates, and reach our concierge team.</p>
+      <span class="fc-arrow">→</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+            Chatbot-Section
+══════════════════════════════════════════ -->
+<div class="chatbot-section" id="chatbot" >
+
+  <!-- Left: description -->
+  <div class="chat-left">
+    <div class="ai-tag">AI-Powered</div>
+    <h2 class="chat-heading">
+      Meet Your <em>AI Wedding</em> Planner
+    </h2>
+    <p class="chat-desc">
+      Our intelligent chatbot understands your vision, budget, and style — then curates the perfect vendors, venues, and packages just for you. Available 24/7 in 8 languages.
+    </p>
+    <ul class="chat-features">
+      <li><span class="feat-dot">✦</span> Understands natural language &amp; regional dialects</li>
+      <li><span class="feat-dot">✦</span> Auto-matches vendors to your exact budget</li>
+      <li><span class="feat-dot">✦</span> Schedules consultations and sends reminders</li>
+    </ul>
+  </div>
+   
+
+  <!-- Right: chat UI widget -->
+  <div class="chat-right">
+    <div class="chat-ui">
+      <!-- Chat header -->
+      <div class="chat-header">
+        <div class="chat-avatar">✦</div>
+        <div class="chat-header-text">
+          <div class="chat-title">WeddingBazaar AI Planner</div>
+          <div class="chat-sub">
+            <span class="online-dot"></span> Online · Ready to help
+          </div>
+        </div>
+        <button class="meet-team-btn" onclick="openMeetAI()">Meet the AI Team →</button>
+      </div>
+
+      <!-- Chat messages -->
+      <div class="chat-body">
+        <div class="msg bot">
+          <div class="msg-av bot-av">✦</div>
+          <div class="msg-bubble">Namaste! 🙏 I'm your personal wedding planner. What type of celebration are you dreaming of?</div>
+        </div>
+        <div class="msg user">
+          <div class="msg-av user-av">P</div>
+          <div class="msg-bubble">Looking for a royal palace wedding in Rajasthan, budget ₹25 lakhs</div>
+        </div>
+        <div class="msg bot">
+          <div class="msg-av bot-av">✦</div>
+          <div class="msg-bubble">Perfect! I found 14 verified palace venues in Rajasthan within ₹25L. Here are your top 3 matches with live availability...</div>
+        </div>
+        <div class="venue-suggestion">
+          ✦ Samode Palace · From ₹8L/night · Available Dec 2025
+        </div>
+      </div>
+
+      <!-- Quick-action chips -->
+      <div class="chat-chips">
+        <button class="chip" onclick="this.classList.toggle('active')">📍 Show venues</button>
+        <button class="chip" onclick="this.classList.toggle('active')">💰 Adjust budget</button>
+        <button class="chip" onclick="this.classList.toggle('active')">📅 Check dates</button>
+        <button class="chip" onclick="this.classList.toggle('active')">🎬 Video tour</button>
+      </div>
+
+      <!-- Input row -->
+      <div class="chat-input-row">
+        <input class="chat-inp" type="text" placeholder="Ask anything about your wedding…" />
+        <button class="chat-send" onclick="sendMsg()">↑</button>
+      </div>
+
+    </div><!-- /chat-ui -->
+  </div>
+
+</div><!-- /chatbot-section -->
+
+
+<!-- ══════════════════════════════════════════
+     MEET YOUR AI — FULL PAGE OVERLAY
+══════════════════════════════════════════ -->
+<div id="meet-ai-overlay">
+  <div class="mai-page">
+
+    <!-- Sticky header -->
+    <div class="mai-header">
+      <div class="mai-header-inner">
+        <div class="mai-logo">Wedding<em>Bazaar</em> <span class="mai-logo-tag">AI Team</span></div>
+        <button class="mai-close-btn" onclick="closeMeetAI()">✕ Close</button>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="mai-hero">
+      <div class="mai-hero-tag">✦ Powered by Anthropic Claude</div>
+      <h1 class="mai-hero-title">Meet Your <em>AI Support</em> Team</h1>
+      <p class="mai-hero-sub">Intelligent, empathetic, and available 24 × 7 — our AI agents are trained exclusively on Indian wedding planning to guide you from "yes!" to "I do."</p>
+    </div>
+
+    <!-- Agent cards grid -->
+    <div class="mai-agents-grid">
+
+      <!-- Featured: Aanya -->
+      <div class="mai-agent-card featured-agent">
+        <div class="mai-agent-glow"></div>
+        <div class="mai-agent-avatar">✦</div>
+        <div class="mai-agent-badge">Lead Planner</div>
+        <div class="mai-agent-name">Aanya</div>
+        <div class="mai-agent-role">Chief Wedding Concierge AI</div>
+        <p class="mai-agent-desc">Your primary guide through every wedding decision — from venue shortlisting to final day-of coordination. Trained on 2.4 lakh Indian weddings.</p>
+        <div class="mai-agent-tags">
+          <span>Vendor Matching</span><span>Budget Planning</span><span>Timeline</span>
+        </div>
+        <div class="mai-agent-stats">
+          <div><div class="mas-num">2.4L+</div><div class="mas-label">Weddings</div></div>
+          <div><div class="mas-num">98%</div><div class="mas-label">Satisfaction</div></div>
+          <div><div class="mas-num">24/7</div><div class="mas-label">Available</div></div>
+        </div>
+        <button class="mai-chat-btn" onclick="closeMeetAI(); document.getElementById('chatbot').scrollIntoView({behavior:'smooth'})">✦ Chat with Aanya</button>
+      </div>
+
+      <!-- Rohan -->
+      <div class="mai-agent-card">
+        <div class="mai-agent-avatar" style="background:linear-gradient(135deg,#2a1a4a,#4a2a7a);">💰</div>
+        <div class="mai-agent-badge" style="background:rgba(160,100,220,.18);color:#c07af0;border-color:rgba(160,100,220,.35);">Finance AI</div>
+        <div class="mai-agent-name">Rohan</div>
+        <div class="mai-agent-role">Smart Budget Advisor AI</div>
+        <p class="mai-agent-desc">Analyses your budget constraints and suggests optimal vendor combinations. Tracks spends in real-time and flags over-budget categories instantly.</p>
+        <div class="mai-agent-tags">
+          <span>Budget Splits</span><span>Vendor Quotes</span><span>Savings Tips</span>
+        </div>
+        <button class="mai-chat-btn outline-btn" onclick="alert('Opening Budget AI Chat...')">Chat with Rohan →</button>
+      </div>
+
+      <!-- Priya -->
+      <div class="mai-agent-card">
+        <div class="mai-agent-avatar" style="background:linear-gradient(135deg,#1a3a2a,#2a6a4a);">📸</div>
+        <div class="mai-agent-badge" style="background:rgba(60,180,100,.12);color:#50c878;border-color:rgba(60,180,100,.3);">Creative AI</div>
+        <div class="mai-agent-name">Priya</div>
+        <div class="mai-agent-role">Photography &amp; Décor Curator AI</div>
+        <p class="mai-agent-desc">Curates photographers, videographers, and décor vendors based on your aesthetic. Generates mood boards and shortlists styles you'll love.</p>
+        <div class="mai-agent-tags">
+          <span>Mood Boards</span><span>Style Match</span><span>Portfolio Review</span>
+        </div>
+        <button class="mai-chat-btn outline-btn" onclick="alert('Opening Creative AI Chat...')">Chat with Priya →</button>
+      </div>
+
+      <!-- Meera -->
+      <div class="mai-agent-card">
+        <div class="mai-agent-avatar" style="background:linear-gradient(135deg,#3a1a1a,#7a2a2a);">🍽️</div>
+        <div class="mai-agent-badge" style="background:rgba(220,80,80,.12);color:#f07070;border-color:rgba(220,80,80,.3);">Catering AI</div>
+        <div class="mai-agent-name">Meera</div>
+        <div class="mai-agent-role">Food &amp; Hospitality Planner AI</div>
+        <p class="mai-agent-desc">Recommends catering vendors, menu options, and hospitality packages. Expert in regional cuisines from Rajasthani thali to South Indian spreads.</p>
+        <div class="mai-agent-tags">
+          <span>Menu Planning</span><span>Regional Cuisine</span><span>Guest Count</span>
+        </div>
+        <button class="mai-chat-btn outline-btn" onclick="alert('Opening Catering AI Chat...')">Chat with Meera →</button>
+      </div>
+
+      <!-- Kabir -->
+      <div class="mai-agent-card">
+        <div class="mai-agent-avatar" style="background:linear-gradient(135deg,#1a2a3a,#2a4a6a);">✈️</div>
+        <div class="mai-agent-badge" style="background:rgba(60,120,220,.12);color:#70a0f0;border-color:rgba(60,120,220,.3);">Travel AI</div>
+        <div class="mai-agent-name">Kabir</div>
+        <div class="mai-agent-role">Honeymoon &amp; Travel Planner AI</div>
+        <p class="mai-agent-desc">Designs tailored honeymoon packages with exclusive wedding-rate deals. Covers domestic hill stations to international beach destinations.</p>
+        <div class="mai-agent-tags">
+          <span>Honeymoon Packages</span><span>Hotel Deals</span><span>Itinerary</span>
+        </div>
+        <button class="mai-chat-btn outline-btn" onclick="alert('Opening Travel AI Chat...')">Chat with Kabir →</button>
+      </div>
+
+      <!-- Diya -->
+      <div class="mai-agent-card">
+        <div class="mai-agent-avatar" style="background:linear-gradient(135deg,#2a2a1a,#5a5a2a);">🎫</div>
+        <div class="mai-agent-badge" style="background:rgba(200,180,60,.12);color:#d4c060;border-color:rgba(200,180,60,.3);">Support AI</div>
+        <div class="mai-agent-name">Diya</div>
+        <div class="mai-agent-role">Customer Support &amp; Resolution AI</div>
+        <p class="mai-agent-desc">Handles complaints, booking changes, refund requests, and vendor disputes. Resolves 85% of issues without escalation, with full ticket tracking.</p>
+        <div class="mai-agent-tags">
+          <span>Complaint Handling</span><span>Refunds</span><span>Booking Changes</span>
+        </div>
+        <button class="mai-chat-btn outline-btn" onclick="alert('Opening Support AI Chat...')">Chat with Diya →</button>
+      </div>
+
+    </div><!-- /mai-agents-grid -->
+
+    <!-- How It Works -->
+    <div class="mai-how">
+      <div class="mai-section-tag">How It Works</div>
+      <h2 class="mai-section-title">Your AI team, <em>every step</em> of the way</h2>
+      <div class="mai-steps">
+        <div class="mai-step">
+          <div class="mai-step-num">01</div>
+          <div class="mai-step-title">Tell us your vision</div>
+          <p class="mai-step-desc">Share your dream wedding details — style, date, guest count, and budget — in plain language or in your regional language.</p>
+        </div>
+        <div class="mai-step-arrow">→</div>
+        <div class="mai-step">
+          <div class="mai-step-num">02</div>
+          <div class="mai-step-title">AI builds your plan</div>
+          <p class="mai-step-desc">Our AI team instantly curates a personalised vendor shortlist, budget breakdown, and wedding timeline for you.</p>
+        </div>
+        <div class="mai-step-arrow">→</div>
+        <div class="mai-step">
+          <div class="mai-step-num">03</div>
+          <div class="mai-step-title">Book with confidence</div>
+          <p class="mai-step-desc">Confirm vendors, make payments, and track your wedding progress — all from one beautiful dashboard, with AI always on standby.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Language Support -->
+    <div class="mai-languages">
+      <div class="mai-lang-title">Available in <em>8 Indian Languages</em></div>
+      <div class="mai-lang-list">
+        <div class="mai-lang-chip">🇮🇳 Hindi</div>
+        <div class="mai-lang-chip">Tamil</div>
+        <div class="mai-lang-chip">Telugu</div>
+        <div class="mai-lang-chip">Kannada</div>
+        <div class="mai-lang-chip">Malayalam</div>
+        <div class="mai-lang-chip">Bengali</div>
+        <div class="mai-lang-chip">Marathi</div>
+        <div class="mai-lang-chip">English</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mai-cta">
+      <h2 class="mai-cta-title">Ready to start planning your <em>dream wedding?</em></h2>
+      <p class="mai-cta-sub">Join 2.4 lakh couples who planned their perfect day with WeddingBazaar AI</p>
+      <div class="mai-cta-btns">
+        <button class="mai-cta-primary" onclick="closeMeetAI(); document.getElementById('chatbot').scrollIntoView({behavior:'smooth'})">✦ Start with Aanya Now</button>
+        <button class="mai-cta-secondary" onclick="closeMeetAI()">Browse Vendors Instead →</button>
+      </div>
+    </div>
+
+    <div class="mai-foot">© 2026 WeddingBazaar Pvt. Ltd. · AI Team · Made with love in India 🇮🇳</div>
+  </div>
+</div><!-- /meet-ai-overlay -->
+
+<!-- ══ SMART BUDGET PLANNER SECTION ══ -->
+<section class="budget-section">
+
+  <div class="s-head">
+    <div class="s-head-left">
+      <div class="s-num" style="color:var(--gold);"></div>
+      <h2 class="s-title" style="color: black;">Smart <i>Budget</i> Planner</h2>
+      <p class="s-subtitle" style="color: #101a10;">Set your budget. We auto-suggest vendors that fit perfectly</p>
+    </div>
+    <div class="budget-header-actions">
+      <button class="smart-btn" onclick="opensmartPage()">✦ Browse All 12,000+ →</button>
+    </div>
+  </div>
+
+  <div class="page-body">
+
+    <!-- ══ MAIN CONTENT ══ -->
+    <main>
+
+      <!-- Filter Tabs -->
+      <div class="filter-row fade">
+        <button class="filter-tab active" onclick="setFilter(this)">All Guides <span class="filter-count">48</span></button>
+        <button class="filter-tab" onclick="setFilter(this)" >Venue &amp; Décor</button>
+        <button class="filter-tab" onclick="setFilter(this)">Photography</button>
+        <button class="filter-tab" onclick="setFilter(this)">Catering</button>
+        <button class="filter-tab" onclick="setFilter(this)">Bridal Couture</button>
+        <button class="filter-tab" onclick="setFilter(this)">Honeymoon</button>
+        <button class="filter-tab" onclick="setFilter(this)">AI Planner</button>
+      </div>
+
+      <!-- Featured Article -->
+      <div class="featured-article fade stagger-1">
+        <div class="fa-visual">
+          <div class="fa-visual-icon">💰</div>
+          <div class="fa-badge">✦ Featured Guide</div>
+          <div class="fa-gold-num">01</div>
+          <svg viewBox="0 0 300 300" width="300" height="300" style="position:absolute;opacity:.05">
+            <circle cx="150" cy="150" r="120" fill="none" stroke="#BF9B5C" stroke-width="1"/>
+            <circle cx="150" cy="150" r="80"  fill="none" stroke="#BF9B5C" stroke-width="1"/>
+            <circle cx="150" cy="150" r="40"  fill="none" stroke="#BF9B5C" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="fa-content">
+          <div class="article-tag">Ultimate Budget Guide · 2026</div>
+          <h2>How to Plan a ₹15 Lakh Indian Wedding Without <i>Compromising</i> on Luxury</h2>
+          <p>You don't need to spend a crore to have a royal wedding. With smart allocation, AI vendor matching, and our step-by-step budget framework, couples across India are hosting breathtaking celebrations at a fraction of the expected cost.</p>
+          <div class="article-meta">
+            <span>By Priya Malhotra</span>
+            <div class="dot"></div>
+            <span>12 min read</span>
+            <div class="dot"></div>
+            <span>Updated May 2026</span>
+          </div>
+          <a class="read-btn" href="#">Read Full Guide →</a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ══ SIDEBAR ══ -->
+    <aside class="sidebar">
+
+      <!-- Budget Calculator -->
+      <div class="sidebar-widget fade">
+        <div class="sw-title">Quick <i>Budget</i> Calculator</div>
+        <div class="budget-calc">
+          <div class="bc-row">
+            <div class="bc-label">Total Budget</div>
+            <div class="bc-val" id="sb-val">₹15,00,000 <em>estimated</em></div>
+            <input type="range" min="100000" max="10000000" step="50000" value="1500000" id="sb-range" oninput="updateSBudget(this.value)"/>
+          </div>
+          <div class="bc-row">
+            <div class="bc-label">City</div>
+            <select class="bc-select">
+              <option>Mumbai</option>
+              <option>Delhi</option>
+              <option selected>Jaipur</option>
+              <option>Bangalore</option>
+              <option>Hyderabad</option>
+              <option>Chennai</option>
+            </select>
+          </div>
+          <div class="bc-row">
+            <div class="bc-label">Estimated Allocation</div>
+            <div class="budget-breakdown" id="sb-breakdown">
+              <div class="bb-row">
+                <div class="bb-dot" style="background:#BF9B5C"></div>
+                <div class="bb-cat">Venue</div>
+                <div class="bb-pct">35%</div>
+              </div>
+              <div class="bb-bar-wrap"><div class="bb-bar" style="width:35%"></div></div>
+              <div class="bb-row">
+                <div class="bb-dot" style="background:#D4B07A"></div>
+                <div class="bb-cat">Catering</div>
+                <div class="bb-pct">25%</div>
+              </div>
+              <div class="bb-bar-wrap"><div class="bb-bar" style="width:25%;opacity:.75"></div></div>
+              <div class="bb-row">
+                <div class="bb-dot" style="background:#9A7A3E"></div>
+                <div class="bb-cat">Photography</div>
+                <div class="bb-pct">15%</div>
+              </div>
+              <div class="bb-bar-wrap"><div class="bb-bar" style="width:15%;opacity:.55"></div></div>
+              <div class="bb-row">
+                <div class="bb-dot" style="background:#F0E6CC"></div>
+                <div class="bb-cat">Décor &amp; Florals</div>
+                <div class="bb-pct">12%</div>
+              </div>
+              <div class="bb-bar-wrap"><div class="bb-bar" style="width:12%;opacity:.4"></div></div>
+              <div class="bb-row">
+                <div class="bb-dot" style="background:#A89880"></div>
+                <div class="bb-cat">Bridal Couture</div>
+                <div class="bb-pct">8%</div>
+              </div>
+              <div class="bb-bar-wrap"><div class="bb-bar" style="width:8%;opacity:.3"></div></div>
+              <div class="bb-row">
+                <div class="bb-dot" style="background:#7A6A56"></div>
+                <div class="bb-cat">Miscellaneous</div>
+                <div class="bb-pct">5%</div>
+              </div>
+              <div class="bb-bar-wrap"><div class="bb-bar" style="width:5%;opacity:.2"></div></div>
+            </div>
+          </div>
+          <button class="calc-btn" onclick="alert('Showing AI-matched vendors for your budget...')">✦ Find Vendors in This Budget</button>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+<!-- ══ FEATURES OVERLAY PAGE ══ -->
+<div id="smart-overlay" class="smart-overlay" style="display:none;">
+  <div class="fo-nav">
+    <div class="fo-logo">Wedding<em>Bazaar</em> <span class="fo-breadcrumb">/ Budget Plans</span></div>
+    <button class="fo-close" onclick="closesmartPage()">✕ Close</button>
+  </div>
+  <div class="fo-hero">
+    <div class="fo-hero-tag">Smart Budget Planner · All Plans</div>
+    <h1 class="fo-hero-h1">Choose Your <i>Budget Plan</i></h1>
+    <p class="fo-hero-sub" style="color:rgba(255, 255, 255, 0.438);">From intimate gatherings to grand royal celebrations — every budget, beautifully planned.</p>
+  </div>
+  <div class="fo-plans-grid">
+
+    <!-- Plan 1 -->
+    <div class="fo-plan-card">
+      <div class="fo-plan-badge">Starter</div>
+      <div class="fo-plan-price-range">₹3L – ₹7L</div>
+      <div class="fo-plan-name">Intimate Celebration</div>
+      <p class="fo-plan-desc">A heartfelt gathering for close family and friends. Elegant, personal, and beautifully curated on a conscious budget.</p>
+      <ul class="fo-plan-features">
+        <li><span>✦</span> Up to 100 guests</li>
+        <li><span>✦</span> Banquet hall or garden venue</li>
+        <li><span>✦</span> Basic photography + 1 videographer</li>
+        <li><span>✦</span> Standard catering (3 course)</li>
+        <li><span>✦</span> Simple floral décor</li>
+        <li><span>✦</span> Digital invitations included</li>
+      </ul>
+      <div class="fo-plan-breakdown">
+        <div class="fo-bb-item"><span>Venue</span><span>35%</span></div>
+        <div class="fo-bb-bar"><div style="width:35%"></div></div>
+        <div class="fo-bb-item"><span>Catering</span><span>30%</span></div>
+        <div class="fo-bb-bar"><div style="width:30%"></div></div>
+        <div class="fo-bb-item"><span>Photography</span><span>15%</span></div>
+        <div class="fo-bb-bar"><div style="width:15%"></div></div>
+        <div class="fo-bb-item"><span>Décor</span><span>12%</span></div>
+        <div class="fo-bb-bar"><div style="width:12%"></div></div>
+        <div class="fo-bb-item"><span>Misc</span><span>8%</span></div>
+        <div class="fo-bb-bar"><div style="width:8%"></div></div>
+      </div>
+      <button class="fo-plan-cta" onclick="alert('Starting Intimate Celebration plan...')">Start This Plan →</button>
+    </div>
+
+    <!-- Plan 2 — Popular -->
+    <div class="fo-plan-card fo-plan-card--featured">
+      <div class="fo-plan-badge fo-plan-badge--gold">Most Popular</div>
+      <div class="fo-plan-price-range">₹10L – ₹25L</div>
+      <div class="fo-plan-name">Classic Grand Wedding</div>
+      <p class="fo-plan-desc">The full Indian wedding experience — vibrant ceremonies, rich décor, memorable photography, and a menu that wows every guest.</p>
+      <ul class="fo-plan-features">
+        <li><span>✦</span> 200–400 guests</li>
+        <li><span>✦</span> Premium banquet or outdoor venue</li>
+        <li><span>✦</span> Cinematic photo + video team</li>
+        <li><span>✦</span> Multi-cuisine buffet catering</li>
+        <li><span>✦</span> Floral mandap + reception backdrop</li>
+        <li><span>✦</span> Bridal couture consultation</li>
+        <li><span>✦</span> Mehendi &amp; Sangeet coordination</li>
+      </ul>
+      <div class="fo-plan-breakdown">
+        <div class="fo-bb-item"><span>Venue</span><span>35%</span></div>
+        <div class="fo-bb-bar"><div style="width:35%"></div></div>
+        <div class="fo-bb-item"><span>Catering</span><span>25%</span></div>
+        <div class="fo-bb-bar"><div style="width:25%"></div></div>
+        <div class="fo-bb-item"><span>Photography</span><span>15%</span></div>
+        <div class="fo-bb-bar"><div style="width:15%"></div></div>
+        <div class="fo-bb-item"><span>Décor &amp; Florals</span><span>12%</span></div>
+        <div class="fo-bb-bar"><div style="width:12%"></div></div>
+        <div class="fo-bb-item"><span>Bridal Couture</span><span>8%</span></div>
+        <div class="fo-bb-bar"><div style="width:8%"></div></div>
+        <div class="fo-bb-item"><span>Misc</span><span>5%</span></div>
+        <div class="fo-bb-bar"><div style="width:5%"></div></div>
+      </div>
+      <button class="fo-plan-cta fo-plan-cta--gold" onclick="alert('Starting Classic Grand Wedding plan...')">Start This Plan →</button>
+    </div>
+
+    <!-- Plan 3 -->
+    <div class="fo-plan-card">
+      <div class="fo-plan-badge">Premium</div>
+      <div class="fo-plan-price-range">₹30L – ₹60L</div>
+      <div class="fo-plan-name">Luxury Palace Wedding</div>
+      <p class="fo-plan-desc">A spectacular celebration at heritage properties, 5-star hotels or luxury resorts — with bespoke everything and curated vendor teams.</p>
+      <ul class="fo-plan-features">
+        <li><span>✦</span> 400–700 guests</li>
+        <li><span>✦</span> Heritage palace or 5-star hotel</li>
+        <li><span>✦</span> Award-winning photography studio</li>
+        <li><span>✦</span> International cuisine + live stations</li>
+        <li><span>✦</span> Luxury floral + LED décor theme</li>
+        <li><span>✦</span> Designer bridal &amp; groom wear</li>
+        <li><span>✦</span> Celebrity performer optional</li>
+        <li><span>✦</span> Dedicated wedding concierge</li>
+      </ul>
+      <div class="fo-plan-breakdown">
+        <div class="fo-bb-item"><span>Venue</span><span>38%</span></div>
+        <div class="fo-bb-bar"><div style="width:38%"></div></div>
+        <div class="fo-bb-item"><span>Catering</span><span>22%</span></div>
+        <div class="fo-bb-bar"><div style="width:22%"></div></div>
+        <div class="fo-bb-item"><span>Photography</span><span>14%</span></div>
+        <div class="fo-bb-bar"><div style="width:14%"></div></div>
+        <div class="fo-bb-item"><span>Décor &amp; Florals</span><span>14%</span></div>
+        <div class="fo-bb-bar"><div style="width:14%"></div></div>
+        <div class="fo-bb-item"><span>Couture</span><span>7%</span></div>
+        <div class="fo-bb-bar"><div style="width:7%"></div></div>
+        <div class="fo-bb-item"><span>Misc</span><span>5%</span></div>
+        <div class="fo-bb-bar"><div style="width:5%"></div></div>
+      </div>
+      <button class="fo-plan-cta" onclick="alert('Starting Luxury Palace Wedding plan...')">Start This Plan →</button>
+    </div>
+
+    <!-- Plan 4 -->
+    <div class="fo-plan-card">
+      <div class="fo-plan-badge">Elite</div>
+      <div class="fo-plan-price-range">₹75L – ₹2Cr+</div>
+      <div class="fo-plan-name">Royal Destination Wedding</div>
+      <p class="fo-plan-desc">An extraordinary multi-day affair at iconic Indian or international destinations — a once-in-a-lifetime celebration with no compromises.</p>
+      <ul class="fo-plan-features">
+        <li><span>✦</span> 300–1000+ guests</li>
+        <li><span>✦</span> Exclusive resort / island / palace buyout</li>
+        <li><span>✦</span> International photography &amp; film crew</li>
+        <li><span>✦</span> Fine dining across 3+ event days</li>
+        <li><span>✦</span> Elaborate multi-venue décor</li>
+        <li><span>✦</span> Celebrity designer outfits</li>
+        <li><span>✦</span> Guest travel &amp; accommodation coordination</li>
+        <li><span>✦</span> Full event production team</li>
+      </ul>
+      <div class="fo-plan-breakdown">
+        <div class="fo-bb-item"><span>Venue &amp; Logistics</span><span>40%</span></div>
+        <div class="fo-bb-bar"><div style="width:40%"></div></div>
+        <div class="fo-bb-item"><span>Catering</span><span>20%</span></div>
+        <div class="fo-bb-bar"><div style="width:20%"></div></div>
+        <div class="fo-bb-item"><span>Photography</span><span>12%</span></div>
+        <div class="fo-bb-bar"><div style="width:12%"></div></div>
+        <div class="fo-bb-item"><span>Décor &amp; Production</span><span>15%</span></div>
+        <div class="fo-bb-bar"><div style="width:15%"></div></div>
+        <div class="fo-bb-item"><span>Couture &amp; Styling</span><span>8%</span></div>
+        <div class="fo-bb-bar"><div style="width:8%"></div></div>
+        <div class="fo-bb-item"><span>Misc</span><span>5%</span></div>
+        <div class="fo-bb-bar"><div style="width:5%"></div></div>
+      </div>
+      <button class="fo-plan-cta" onclick="alert('Starting Royal Destination Wedding plan...')">Start This Plan →</button>
+    </div>
+
+  </div><!-- /fo-plans-grid -->
+
+  <div class="fo-compare-cta">
+    <p>Not sure which plan fits? Let our AI planner analyse your needs.</p>
+    <button onclick="closesmartPage()">✦ Chat with AI Planner →</button>
+  </div>
+</div>
+    
+<!-- ════════════════════════════════════════════════════════════
+     VERIFIED LUXURY VENDORS SECTION
+     ════════════════════════════════════════════════════════════ -->
+<section class="vendors-section" id="vendors">
+
+  <!-- Section Header -->
+  <div class="s-head">
+    <div class="s-head-left">
+      <div class="s-num" style="color: var(--gold);"></div>
+      <h2 class="s-title" style="color:rgba(255, 217, 0, 0.505);">Verified <i>Luxury</i> Vendors</h2>
+      <p class="s-subtitle">Handpicked artisans trusted by thousands of couples</p>
+    </div>
+    <div class="s-head-right">
+      <button class="btn-feature" onclick="openFeaturePage()">✦ Feature</button>
+      
+    </div>
+  </div>
+
+  <!-- Vendor Cards -->
+  <div class="vendors-grid">
+
+    <!-- CARD 1 — Photography -->
+    <div class="vendor-card">
+      <div class="vc-accent">
+        <div class="vc-avatar">R</div>
+        <div class="vc-rank">Featured</div>
+      </div>
+      <div class="vc-body">
+        <div class="vc-top">
+          <div class="vc-meta">
+            <div class="vc-cat">Photography</div>
+            <div class="vc-name">Rajan &amp; Co. Studios</div>
+            <div class="vc-loc">Mumbai · Delhi · Jaipur</div>
+            <div class="vc-tags">
+              <span class="vc-tag">Cinematic</span>
+              <span class="vc-tag">Destination</span>
+              <span class="vc-tag">Drone</span>
+            </div>
+          </div>
+          <div class="vc-price-tag">
+            <div class="vc-price-label">Starting from</div>
+            <div class="vc-price-val">₹5L</div>
+          </div>
+        </div>
+        <div class="vc-bottom">
+          <div class="vc-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-n">5.0 · 342 reviews</span>
+          </div>
+          <a class="vc-cta" href="#">Book Now →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 — Bridal Couture -->
+    <div class="vendor-card">
+      <div class="vc-accent">
+        <div class="vc-avatar">M</div>
+        <div class="vc-rank">Couture</div>
+      </div>
+      <div class="vc-body">
+        <div class="vc-top">
+          <div class="vc-meta">
+            <div class="vc-cat">Bridal Couture</div>
+            <div class="vc-name">Meera Atelier</div>
+            <div class="vc-loc">New Delhi</div>
+            <div class="vc-tags">
+              <span class="vc-tag">Lehenga</span>
+              <span class="vc-tag">Bespoke</span>
+            </div>
+          </div>
+          <div class="vc-price-tag">
+            <div class="vc-price-label">Starting from</div>
+            <div class="vc-price-val">₹2L</div>
+          </div>
+        </div>
+        <div class="vc-bottom">
+          <div class="vc-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-n">4.9 · 218 reviews</span>
+          </div>
+          <a class="vc-cta" href="#">Book Now →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 — Heritage Venue -->
+    <div class="vendor-card">
+      <div class="vc-accent">
+        <div class="vc-avatar">L</div>
+        <div class="vc-rank">Venue</div>
+      </div>
+      <div class="vc-body">
+        <div class="vc-top">
+          <div class="vc-meta">
+            <div class="vc-cat">Heritage Venue</div>
+            <div class="vc-name">The Leela Palace</div>
+            <div class="vc-loc">Udaipur · Jaipur</div>
+            <div class="vc-tags">
+              <span class="vc-tag">Palace</span>
+              <span class="vc-tag">5-Star</span>
+              <span class="vc-tag">900+ guests</span>
+            </div>
+          </div>
+          <div class="vc-price-tag">
+            <div class="vc-price-label">Starting from</div>
+            <div class="vc-price-val">₹8L</div>
+          </div>
+        </div>
+        <div class="vc-bottom">
+          <div class="vc-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-n">5.0 · 190 reviews</span>
+          </div>
+          <a class="vc-cta" href="#">Book Now →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 — Floral Design -->
+    <div class="vendor-card">
+      <div class="vc-accent">
+        <div class="vc-avatar">B</div>
+        <div class="vc-rank">Florals</div>
+      </div>
+      <div class="vc-body">
+        <div class="vc-top">
+          <div class="vc-meta">
+            <div class="vc-cat">Floral Design</div>
+            <div class="vc-name">Bloom &amp; Veil</div>
+            <div class="vc-loc">Bangalore</div>
+            <div class="vc-tags">
+              <span class="vc-tag">Mandap</span>
+              <span class="vc-tag">Table décor</span>
+            </div>
+          </div>
+          <div class="vc-price-tag">
+            <div class="vc-price-label">Starting from</div>
+            <div class="vc-price-val">₹80K</div>
+          </div>
+        </div>
+        <div class="vc-bottom">
+          <div class="vc-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-n">4.8 · 156 reviews</span>
+          </div>
+          <a class="vc-cta" href="#">Book Now →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5 — Jewellery -->
+    <div class="vendor-card">
+      <div class="vc-accent">
+        <div class="vc-avatar">K</div>
+        <div class="vc-rank">Jewels</div>
+      </div>
+      <div class="vc-body">
+        <div class="vc-top">
+          <div class="vc-meta">
+            <div class="vc-cat">Jewellery</div>
+            <div class="vc-name">House of Kundan</div>
+            <div class="vc-loc">Jaipur · Mumbai</div>
+            <div class="vc-tags">
+              <span class="vc-tag">Kundan</span>
+              <span class="vc-tag">Polki</span>
+            </div>
+          </div>
+          <div class="vc-price-tag">
+            <div class="vc-price-label">Starting from</div>
+            <div class="vc-price-val">₹1.2L</div>
+          </div>
+        </div>
+        <div class="vc-bottom">
+          <div class="vc-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-n">4.9 · 88 reviews</span>
+          </div>
+          <a class="vc-cta" href="#">Book Now →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6 — Catering -->
+    <div class="vendor-card">
+      <div class="vc-accent">
+        <div class="vc-avatar">T</div>
+        <div class="vc-rank">Catering</div>
+      </div>
+      <div class="vc-body">
+        <div class="vc-top">
+          <div class="vc-meta">
+            <div class="vc-cat">Catering</div>
+            <div class="vc-name">The Royal Kitchen</div>
+            <div class="vc-loc">Pan-India</div>
+            <div class="vc-tags">
+              <span class="vc-tag">Multi-cuisine</span>
+              <span class="vc-tag">Live stations</span>
+            </div>
+          </div>
+          <div class="vc-price-tag">
+            <div class="vc-price-label">Per plate</div>
+            <div class="vc-price-val">₹1,200</div>
+          </div>
+        </div>
+        <div class="vc-bottom">
+          <div class="vc-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-n">4.7 · 312 reviews</span>
+          </div>
+          <a class="vc-cta" href="#">Book Now →</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /vendors-grid -->
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     FEATURE PAGE OVERLAY  (16 vendor categories)
+     ════════════════════════════════════════════════════════════ -->
+<div id="featurePage">
+
+  <nav class="fp-nav">
+    <div class="fp-logo">
+      Wedding<em>Bazaar</em>
+      <span class="fp-logo-sub">✦ Vendor Categories</span>
+    </div>
+    <button class="fp-close" onclick="closeFeaturePage()" aria-label="Close">✕</button>
+  </nav>
+
+  <div class="fp-hero">
+    <div class="fp-eyebrow">✦ 12,000+ Verified Professionals</div>
+    <h1 class="fp-h1">Discover <em>Luxury</em> Vendor Categories</h1>
+    <p class="fp-sub">Every artisan. Every category. Curated for your perfect celebration.</p>
+  </div>
+
+  <div class="fp-categories" id="fpCategoriesGrid"></div>
+
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     ARTIST DETAIL PAGE
+     ════════════════════════════════════════════════════════════ -->
+<div id="artistPage">
+
+  <div class="ap-hero" id="apHero">
+    <div class="ap-hero-overlay"></div>
+    <nav class="ap-hero-nav">
+      <button class="ap-back" onclick="closeArtistPage()">← Back to Categories</button>
+      <div class="ap-nav-logo">Wedding<em>Bazaar</em></div>
+    </nav>
+    <div class="ap-hero-title">
+      <div class="ap-hero-cat" id="apHeroCat"></div>
+      <h1 class="ap-hero-h1" id="apHeroTitle"></h1>
+    </div>
+  </div>
+
+  <div class="ap-artists" id="apArtistsList"></div>
+
+</div>
+
+
+
+
+<!-- ══ BOOKING CALENDAR ══ -->
+<section class="booking-section" id="booking">
+ 
+  <!-- ─── Section Header ─── -->
+  <div class="s-head">
+    <div class="s-head-left">
+      <div class="s-num" style="color:var(--gold);"></div>
+      <h2 class="s-title">Live <i>Booking</i> Calendar</h2>
+      <p class="s-subtitle">Real-time availability. Instant confirmation. Zero guesswork.</p>
+    </div>
+ 
+    <!-- ★ BOOKING BUTTON — top right ★ -->
+    <button class="booking-page-btn" onclick="openBookingPage()">
+      <span class="booking-page-btn-icon">📋</span>
+      <span class="booking-page-btn-text">Booking</span>
+      <span class="booking-page-btn-arrow">→</span>
+    </button>
+  </div>
+ 
+  <!-- ─── Calendar + Detail ─── -->
+  <div class="calendar-wrap">
+ 
+    <!-- Calendar -->
+    <div>
+      <div class="cal-box">
+        <div class="cal-nav">
+          <button class="cal-btn" onclick="changeMonth(-1)">‹</button>
+          <div class="cal-month" id="cal-month-label">December 2025</div>
+          <button class="cal-btn" onclick="changeMonth(1)">›</button>
+        </div>
+        <div class="cal-grid" id="cal-grid">
+          <div class="cal-day-name">S</div>
+          <div class="cal-day-name">M</div>
+          <div class="cal-day-name">T</div>
+          <div class="cal-day-name">W</div>
+          <div class="cal-day-name">T</div>
+          <div class="cal-day-name">F</div>
+          <div class="cal-day-name">S</div>
+        </div>
+        <div class="cal-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:rgba(191,155,92,.4)"></div>Available
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#C85050"></div>Fully Booked
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#BF9B5C"></div>Selected
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Detail Panel -->
+    <div class="cal-detail">
+      <div class="cal-label">Select a Vendor</div>
+      <select class="form-select" style="margin-bottom:1rem">
+        <option>Rajan &amp; Co. Studios – Photography</option>
+        <option>The Leela Palace – Venue</option>
+        <option>Bloom &amp; Veil – Florals</option>
+        <option>The Royal Kitchen – Catering</option>
+        <option>Meera Atelier – Bridal Couture</option>
+      </select>
+ 
+      <div class="cal-label" style="margin-bottom:.75rem">Available Time Slots · Dec 14, 2025</div>
+      <div class="time-slots">
+        <div class="time-slot">9:00 AM</div>
+        <div class="time-slot busy">11:00 AM</div>
+        <div class="time-slot sel">2:00 PM</div>
+        <div class="time-slot">4:00 PM</div>
+        <div class="time-slot busy">6:00 PM</div>
+        <div class="time-slot">7:30 PM</div>
+      </div>
+ 
+      <div class="mt-150">
+        <div class="cal-label" style="margin-bottom:.75rem">Your Details</div>
+        <div class="booking-form-row">
+          <input class="form-input" placeholder="Full Name"/>
+          <input class="form-input" placeholder="Mobile Number"/>
+        </div>
+        <input class="form-input mt-75" placeholder="Email Address" style="width:100%"/>
+      </div>
+ 
+      <button class="btn-gold" onclick="alert('Booking confirmed! Confirmation sent to your email and WhatsApp.')">
+        ✦ Confirm Booking
+      </button>
+      <div class="cal-advance-note">Advance payment of 30% secures your slot instantly</div>
+    </div>
+ 
+  </div>
+</section>
+ 
+ 
+<!-- ══════════════════════════════════════
+     BOOKING OPTIONS PAGE (modal overlay)
+     Opens when "Booking →" button is clicked
+     ══════════════════════════════════════ -->
+<div id="booking-page-overlay" class="booking-overlay" onclick="closeBookingPage(event)">
+  <div class="booking-page" id="booking-page-modal">
+ 
+    <!-- Close -->
+    <button class="bp-close" onclick="closeBookingPage(null, true)">✕</button>
+ 
+    <!-- Header -->
+    <div class="bp-header">
+      <div class="bp-eyebrow">✦ WeddingBazaar</div>
+      <h2 class="bp-title">Choose Your <i>Booking Type</i></h2>
+      <p class="bp-sub">Select the service you'd like to book — instant confirmation on every option</p>
+    </div>
+ 
+    <!-- Options Grid -->
+    <div class="bp-grid">
+ 
+      <!-- 1 — Venue -->
+      <div class="bp-card" onclick="selectBooking(this,'Venue Booking')">
+        <div class="bp-card-icon">🕌</div>
+        <div class="bp-card-badge">Most Popular</div>
+        <div class="bp-card-title">Venue Booking</div>
+        <p class="bp-card-desc">Reserve palaces, banquet halls, farmhouses, rooftops &amp; heritage properties across India.</p>
+        <div class="bp-card-meta"><span>From ₹3L/event</span><span>·</span><span>500+ venues</span></div>
+        <div class="bp-card-tags">
+          <span class="bp-tag">Palace</span>
+          <span class="bp-tag">Banquet</span>
+          <span class="bp-tag">Outdoor</span>
+          <span class="bp-tag">Destination</span>
+        </div>
+        <button class="bp-card-btn">Book Venue →</button>
+      </div>
+ 
+      <!-- 2 — Photography -->
+      <div class="bp-card" onclick="selectBooking(this,'Photography & Videography')">
+        <div class="bp-card-icon">📸</div>
+        <div class="bp-card-title">Photography &amp; Videography</div>
+        <p class="bp-card-desc">Cinematic storytelling, drone coverage, photo albums &amp; same-day edits by award-winning studios.</p>
+        <div class="bp-card-meta"><span>From ₹80K/day</span><span>·</span><span>1,200+ photographers</span></div>
+        <div class="bp-card-tags">
+          <span class="bp-tag">Cinematic</span>
+          <span class="bp-tag">Drone</span>
+          <span class="bp-tag">Pre-wedding</span>
+        </div>
+        <button class="bp-card-btn">Book Photographer →</button>
+      </div>
+ 
+      <!-- 3 — Bridal Couture -->
+      <div class="bp-card" onclick="selectBooking(this,'Bridal Couture Appointment')">
+        <div class="bp-card-icon">👗</div>
+        <div class="bp-card-title">Bridal Couture Appointment</div>
+        <p class="bp-card-desc">Schedule a private fitting session with top designers — lehengas, sarees, Indo-western &amp; groom wear.</p>
+        <div class="bp-card-meta"><span>From ₹50K</span><span>·</span><span>350+ designers</span></div>
+        <div class="bp-card-tags">
+          <span class="bp-tag">Lehenga</span>
+          <span class="bp-tag">Bespoke</span>
+          <span class="bp-tag">Groom</span>
+        </div>
+        <button class="bp-card-btn">Book Appointment →</button>
+      </div>
+ 
+      <!-- 4 — Catering -->
+      <div class="bp-card" onclick="selectBooking(this,'Catering Service')">
+        <div class="bp-card-icon">🍽️</div>
+        <div class="bp-card-title">Catering Service</div>
+        <p class="bp-card-desc">Multi-cuisine menus, live stations, themed setups &amp; full event catering with dedicated staff.</p>
+        <div class="bp-card-meta"><span>From ₹800/plate</span><span>·</span><span>280+ caterers</span></div>
+        <div class="bp-card-tags">
+          <span class="bp-tag">Multi-cuisine</span>
+          <span class="bp-tag">Jain</span>
+          <span class="bp-tag">Live stations</span>
+        </div>
+        <button class="bp-card-btn">Book Caterer →</button>
+      </div>
+ 
+      <!-- 5 — Floral & Décor -->
+      <div class="bp-card" onclick="selectBooking(this,'Floral & Décor')">
+        <div class="bp-card-icon">🌸</div>
+        <div class="bp-card-title">Floral &amp; Décor</div>
+        <p class="bp-card-desc">Mandap designs, floral installations, centrepieces, stage setups &amp; full venue transformation.</p>
+        <div class="bp-card-meta"><span>From ₹40K</span><span>·</span><span>420+ decorators</span></div>
+        <div class="bp-card-tags">
+          <span class="bp-tag">Mandap</span>
+          <span class="bp-tag">Floral wall</span>
+          <span class="bp-tag">Theme</span>
+        </div>
+        <button class="bp-card-btn">Book Decorator →</button>
+      </div>
+ 
+      <!-- 6 — Video Consultation -->
+      <div class="bp-card" onclick="selectBooking(this,'Video Consultation')">
+        <div class="bp-card-icon">🎬</div>
+        <div class="bp-card-title">Video Consultation</div>
+        <p class="bp-card-desc">Face-to-face virtual sessions with vendors, planners &amp; stylists. Review portfolios &amp; plan live.</p>
+        <div class="bp-card-meta"><span>Free – ₹2,000</span><span>·</span><span>Available 24/7</span></div>
+        <div class="bp-card-tags">
+          <span class="bp-tag">Free slot</span>
+          <span class="bp-tag">30 / 60 min</span>
+        </div>
+        <button class="bp-card-btn">Book Consultation →</button>
+      </div>
+ 
+      <!-- 7 — Honeymoon -->
+      <div class="bp-card" onclick="selectBooking(this,'Honeymoon Package')">
+        <div class="bp-card-icon">✈️</div>
+        <div class="bp-card-title">Honeymoon Package</div>
+        <p class="bp-card-desc">Curated domestic &amp; international escapes — Maldives, Bali, Kashmir, Europe &amp; more at wedding rates.</p>
+        <div class="bp-card-meta"><span>From ₹50K/couple</span><span>·</span><span>120+ destinations</span></div>
+        <div class="bp-card-tags">
+          <span class="bp-tag">Maldives</span>
+          <span class="bp-tag">Europe</span>
+          <span class="bp-tag">Kashmir</span>
+        </div>
+        <button class="bp-card-btn">Explore Packages →</button>
+      </div>
+ 
+      <!-- 8 — Full Planning (Premium) -->
+      <div class="bp-card bp-card-premium" onclick="selectBooking(this,'Full Wedding Planning')">
+        <div class="bp-card-icon">💎</div>
+        <div class="bp-card-badge bp-badge-gold">Premium</div>
+        <div class="bp-card-title">Full Wedding Planning</div>
+        <p class="bp-card-desc">End-to-end concierge service — dedicated planner, vendor coordination, timeline &amp; day-of management.</p>
+        <div class="bp-card-meta"><span>From ₹1.5L</span><span>·</span><span>White-glove service</span></div>
+        <div class="bp-card-tags">
+          <span class="bp-tag">Dedicated planner</span>
+          <span class="bp-tag">Full coordination</span>
+        </div>
+        <button class="bp-card-btn bp-btn-gold">Get Started →</button>
+      </div>
+ 
+    </div><!-- /.bp-grid -->
+ 
+    <div class="bp-footer-note">
+      🔒 Secure payments · Instant confirmation · 30% advance secures your slot
+    </div>
+  </div><!-- /.booking-page -->
+</div><!-- /.booking-overlay -->
+
+<!-- ══════════════════════════════════════
+     MORE HIGHLIGHTS & PROMOS SECTION
+══════════════════════════════════════ -->
+<section class="videos-section" id="videos">
+
+  <!-- Section Header -->
+  <div class="s-head">
+    <div class="s-head-left">
+      <div class="s-num" style="color: var(--gold);"></div>
+      <h2 class="s-title">Wedding <i>Highlights</i> &amp; Vendor Promos</h2>
+    </div>
+    <div class="s-head-right">
+      <button class="btn-videos" onclick="openVideosPage()">🎬 Videos</button>
+    </div>
+  </div>
+
+  <!-- Horizontal Scroll Track — 4 Preview Cards -->
+  <div class="vd-track">
+
+    <!-- Card 1 — Real Wedding · Palace ceremony -->
+    <div class="vd-card">
+      <div class="vd-inner">
+        <video class="vd-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80">
+          <source src="https://videos.pexels.com/video-files/5191292/5191292-uhd_1440_2560_25fps.mp4" type="video/mp4"/>
+        </video>
+        <div class="vd-gloss"></div>
+        <div class="vd-overlay"></div>
+        <div class="vd-border"></div>
+        <div class="vd-shine"></div>
+        <div class="vd-num">01</div>
+        <div class="vd-play">▶</div>
+        <div class="vd-info">
+          <div class="vd-badge">Real Wedding</div>
+          <div class="vd-title">Priya &amp; Arjun · A Royal Jaipur Affair</div>
+          <div class="vd-dur">4:32 min</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 — Vendor Promo · Photography studio -->
+    <div class="vd-card">
+      <div class="vd-inner">
+        <video class="vd-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80">
+          <source src="https://videos.pexels.com/video-files/4667143/4667143-uhd_1440_2560_25fps.mp4" type="video/mp4"/>
+        </video>
+        <div class="vd-gloss"></div>
+        <div class="vd-overlay"></div>
+        <div class="vd-border"></div>
+        <div class="vd-shine"></div>
+        <div class="vd-num">02</div>
+        <div class="vd-play">▶</div>
+        <div class="vd-info">
+          <div class="vd-badge promo">Vendor Promo</div>
+          <div class="vd-title">Rajan Studios – Behind the Lens</div>
+          <div class="vd-dur">2:18 min</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 — Real Wedding · Beach ceremony -->
+    <div class="vd-card">
+      <div class="vd-inner">
+        <video class="vd-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1510076857177-7470076d4098?w=600&q=80">
+          <source src="https://videos.pexels.com/video-files/4033929/4033929-uhd_1440_2560_25fps.mp4" type="video/mp4"/>
+        </video>
+        <div class="vd-gloss"></div>
+        <div class="vd-overlay"></div>
+        <div class="vd-border"></div>
+        <div class="vd-shine"></div>
+        <div class="vd-num">03</div>
+        <div class="vd-play">▶</div>
+        <div class="vd-info">
+          <div class="vd-badge">Real Wedding</div>
+          <div class="vd-title">Nisha &amp; Dev · Goa Beach Wedding</div>
+          <div class="vd-dur">3:05 min</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 — Vendor Promo · Floral design -->
+    <div class="vd-card">
+      <div class="vd-inner">
+        <video class="vd-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?w=600&q=80">
+          <source src="https://videos.pexels.com/video-files/3789566/3789566-uhd_1440_2560_25fps.mp4" type="video/mp4"/>
+        </video>
+        <div class="vd-gloss"></div>
+        <div class="vd-overlay"></div>
+        <div class="vd-border"></div>
+        <div class="vd-shine"></div>
+        <div class="vd-num">04</div>
+        <div class="vd-play">▶</div>
+        <div class="vd-info">
+          <div class="vd-badge promo">Vendor Promo</div>
+          <div class="vd-title">Bloom &amp; Veil – Floral Art</div>
+          <div class="vd-dur">1:55 min</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /vd-track -->
+</section>
+
+
+<!-- ══════════════════════════════════════
+     VIDEOS FULL PAGE OVERLAY
+══════════════════════════════════════ -->
+<div id="videos-page" class="vp-page">
+
+  <!-- Sticky top nav -->
+  <div class="vp-topbar">
+    <div class="vp-logo">Wedding<em>Bazaar</em> <span>· Videos</span></div>
+    <button class="vp-close-btn" onclick="closeVideosPage()">✕ Close</button>
+  </div>
+
+  <!-- Hero heading + filters -->
+  <div class="vp-hero">
+    <div class="vp-eyebrow">Cinematic Wedding Films</div>
+    <h1 class="vp-heading">Every Frame, a <i>Memory</i></h1>
+    <p class="vp-subtext">Explore cinematic wedding films, vendor showcases, and real celebration stories — all crafted by India's finest visual storytellers.</p>
+
+    <div id="vp-filters" class="vp-filters">
+      <button class="vp-filter active" onclick="filterVideos('all',this)">All Videos</button>
+      <button class="vp-filter" onclick="filterVideos('cinematic',this)">🎬 Cinematic</button>
+      <button class="vp-filter" onclick="filterVideos('traditional',this)">🪔 Traditional</button>
+      <button class="vp-filter" onclick="filterVideos('destination',this)">✈️ Destination</button>
+      <button class="vp-filter" onclick="filterVideos('promo',this)">🎥 Vendor Promos</button>
+      <button class="vp-filter" onclick="filterVideos('short',this)">⚡ Short Films</button>
+    </div>
+  </div>
+
+  <!-- Video Cards Grid -->
+  <div id="vp-grid" class="vp-grid">
+
+    <!-- ── Card 1 · Cinematic ── -->
+    <div class="vp-card" data-cat="cinematic" onclick="openVideoModal(this)">
+      <div class="vp-card-inner">
+        <div class="vp-card-bg" style="background:linear-gradient(160deg,#4A2040,#1E0A2E);"></div>
+        <div class="vp-card-media" style="background-image:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=700&q=80');"></div>
+        <div class="vp-card-overlay"></div>
+        <div class="vp-play-btn"><span>▶</span></div>
+        <div class="vp-card-duration">4:32</div>
+        <div class="vp-card-type cinematic-tag">Cinematic</div>
+        <div class="vp-card-body">
+          <div class="vp-card-title">Priya &amp; Arjun — A Royal Jaipur Affair</div>
+          <div class="vp-card-meta">Jaipur · Nov 2025 · Rajan Studios</div>
+          <div class="vp-card-desc">A sweeping cinematic journey through the grandeur of Amer Palace — mehndi, baraat, and vows under a Rajasthani moon.</div>
+          <div class="vp-card-tags">
+            <span class="vp-tag">Palace Wedding</span>
+            <span class="vp-tag">300+ Guests</span>
+          </div>
+        </div>
+        <div class="vp-person-strip">
+          <div class="vp-person-av" style="background:linear-gradient(135deg,#BF9B5C,#8B6914);">P</div>
+          <div class="vp-person-av vp-av-offset" style="background:linear-gradient(135deg,#8B4A6E,#4A1030);">A</div>
+          <div class="vp-person-info">
+            <div class="vp-person-name">Priya &amp; Arjun Mehta</div>
+            <div class="vp-person-detail">Directed by Rajan &amp; Co. Studios</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 2 · Traditional ── -->
+    <div class="vp-card" data-cat="traditional" onclick="openVideoModal(this)">
+      <div class="vp-card-inner">
+        <div class="vp-card-bg" style="background:linear-gradient(160deg,#3A1A10,#1E0808);"></div>
+        <div class="vp-card-media" style="background-image:url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=700&q=80');"></div>
+        <div class="vp-card-overlay"></div>
+        <div class="vp-play-btn"><span>▶</span></div>
+        <div class="vp-card-duration">6:14</div>
+        <div class="vp-card-type traditional-tag">Traditional</div>
+        <div class="vp-card-body">
+          <div class="vp-card-title">Ananya &amp; Vikram — Tamil Brahmin Ceremony</div>
+          <div class="vp-card-meta">Chennai · Oct 2025 · Lens &amp; Light Co.</div>
+          <div class="vp-card-desc">A deeply moving documentation of a traditional Tambrahm wedding — the kanyadaanam, saptapadi, and the sacred moments in between.</div>
+          <div class="vp-card-tags">
+            <span class="vp-tag">Traditional</span>
+            <span class="vp-tag">Tamil Nadu</span>
+          </div>
+        </div>
+        <div class="vp-person-strip">
+          <div class="vp-person-av" style="background:linear-gradient(135deg,#C85050,#7A1010);">A</div>
+          <div class="vp-person-av vp-av-offset" style="background:linear-gradient(135deg,#507AC8,#103070);">V</div>
+          <div class="vp-person-info">
+            <div class="vp-person-name">Ananya &amp; Vikram Iyer</div>
+            <div class="vp-person-detail">Directed by Lens &amp; Light Co.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 3 · Destination ── -->
+    <div class="vp-card" data-cat="destination" onclick="openVideoModal(this)">
+      <div class="vp-card-inner">
+        <div class="vp-card-bg" style="background:linear-gradient(160deg,#0A2A3A,#060F18);"></div>
+        <div class="vp-card-media" style="background-image:url('https://images.unsplash.com/photo-1510076857177-7470076d4098?w=700&q=80');"></div>
+        <div class="vp-card-overlay"></div>
+        <div class="vp-play-btn"><span>▶</span></div>
+        <div class="vp-card-duration">3:05</div>
+        <div class="vp-card-type destination-tag">Destination</div>
+        <div class="vp-card-body">
+          <div class="vp-card-title">Nisha &amp; Dev — Goa Beach Wedding</div>
+          <div class="vp-card-meta">Goa · Dec 2025 · Ocean Frame Films</div>
+          <div class="vp-card-desc">Sun-soaked vows on the Goa shoreline — golden hour portraits, beachside reception, and the most breathtaking first dance.</div>
+          <div class="vp-card-tags">
+            <span class="vp-tag">Beach</span>
+            <span class="vp-tag">Destination</span>
+          </div>
+        </div>
+        <div class="vp-person-strip">
+          <div class="vp-person-av" style="background:linear-gradient(135deg,#50A8C8,#105070);">N</div>
+          <div class="vp-person-av vp-av-offset" style="background:linear-gradient(135deg,#50C878,#106030);">D</div>
+          <div class="vp-person-info">
+            <div class="vp-person-name">Nisha &amp; Dev Pillai</div>
+            <div class="vp-person-detail">Directed by Ocean Frame Films</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 4 · Vendor Promo ── -->
+    <div class="vp-card" data-cat="promo" onclick="openVideoModal(this)">
+      <div class="vp-card-inner">
+        <div class="vp-card-bg" style="background:linear-gradient(160deg,#2A1040,#100820);"></div>
+        <div class="vp-card-media" style="background-image:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=700&q=80');"></div>
+        <div class="vp-card-overlay"></div>
+        <div class="vp-play-btn"><span>▶</span></div>
+        <div class="vp-card-duration">2:18</div>
+        <div class="vp-card-type promo-tag">Vendor Promo</div>
+        <div class="vp-card-body">
+          <div class="vp-card-title">Rajan Studios — Behind the Lens</div>
+          <div class="vp-card-meta">Mumbai · Portfolio Showcase · 2025</div>
+          <div class="vp-card-desc">A look inside the creative process of India's most awarded wedding photography studio — from raw moments to timeless frames.</div>
+          <div class="vp-card-tags">
+            <span class="vp-tag">Photography</span>
+            <span class="vp-tag">Vendor</span>
+          </div>
+        </div>
+        <div class="vp-person-strip">
+          <div class="vp-person-av" style="background:linear-gradient(135deg,#BF9B5C,#7A5A14);">R</div>
+          <div class="vp-person-info" style="margin-left:4px;">
+            <div class="vp-person-name">Rajan &amp; Co. Studios</div>
+            <div class="vp-person-detail">Premium Wedding Photographers · Mumbai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 5 · Short Film ── -->
+    <div class="vp-card" data-cat="short" onclick="openVideoModal(this)">
+      <div class="vp-card-inner">
+        <div class="vp-card-bg" style="background:linear-gradient(160deg,#1A3020,#060C08);"></div>
+        <div class="vp-card-media" style="background-image:url('https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?w=700&q=80');"></div>
+        <div class="vp-card-overlay"></div>
+        <div class="vp-play-btn"><span>▶</span></div>
+        <div class="vp-card-duration">1:45</div>
+        <div class="vp-card-type short-tag">Short Film</div>
+        <div class="vp-card-body">
+          <div class="vp-card-title">Meera &amp; Rohan — 90 Seconds of Love</div>
+          <div class="vp-card-meta">Udaipur · Sep 2025 · StoryFrame India</div>
+          <div class="vp-card-desc">A poetic short-form wedding film that captures the essence of their love story in under two minutes — perfect for social sharing.</div>
+          <div class="vp-card-tags">
+            <span class="vp-tag">Short Film</span>
+            <span class="vp-tag">Instagram</span>
+          </div>
+        </div>
+        <div class="vp-person-strip">
+          <div class="vp-person-av" style="background:linear-gradient(135deg,#C878A0,#702050);">M</div>
+          <div class="vp-person-av vp-av-offset" style="background:linear-gradient(135deg,#78A0C8,#204870);">R</div>
+          <div class="vp-person-info">
+            <div class="vp-person-name">Meera &amp; Rohan Kapoor</div>
+            <div class="vp-person-detail">Directed by StoryFrame India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 6 · Cinematic ── -->
+    <div class="vp-card" data-cat="cinematic" onclick="openVideoModal(this)">
+      <div class="vp-card-inner">
+        <div class="vp-card-bg" style="background:linear-gradient(160deg,#3A2010,#1A0C06);"></div>
+        <div class="vp-card-media" style="background-image:url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b?w=700&q=80');"></div>
+        <div class="vp-card-overlay"></div>
+        <div class="vp-play-btn"><span>▶</span></div>
+        <div class="vp-card-duration">5:50</div>
+        <div class="vp-card-type cinematic-tag">Cinematic</div>
+        <div class="vp-card-body">
+          <div class="vp-card-title">Sanya &amp; Karan — Kerala Backwaters</div>
+          <div class="vp-card-meta">Alleppey · Jan 2026 · Frame of Gold</div>
+          <div class="vp-card-desc">A cinematic masterpiece shot on Kerala's serene backwaters — houseboat ceremonies, lantern-lit evenings, and eternal promises.</div>
+          <div class="vp-card-tags">
+            <span class="vp-tag">Cinematic</span>
+            <span class="vp-tag">Kerala</span>
+          </div>
+        </div>
+        <div class="vp-person-strip">
+          <div class="vp-person-av" style="background:linear-gradient(135deg,#78C8A0,#205040);">S</div>
+          <div class="vp-person-av vp-av-offset" style="background:linear-gradient(135deg,#C8A078,#704020);">K</div>
+          <div class="vp-person-info">
+            <div class="vp-person-name">Sanya &amp; Karan Nair</div>
+            <div class="vp-person-detail">Directed by Frame of Gold</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 7 · Traditional ── -->
+    <div class="vp-card" data-cat="traditional" onclick="openVideoModal(this)">
+      <div class="vp-card-inner">
+        <div class="vp-card-bg" style="background:linear-gradient(160deg,#2A1A40,#0E0820);"></div>
+        <div class="vp-card-media" style="background-image:url('https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=700&q=80');"></div>
+        <div class="vp-card-overlay"></div>
+        <div class="vp-play-btn"><span>▶</span></div>
+        <div class="vp-card-duration">7:22</div>
+        <div class="vp-card-type traditional-tag">Traditional</div>
+        <div class="vp-card-body">
+          <div class="vp-card-title">Deepika &amp; Suresh — South Indian Grand Wedding</div>
+          <div class="vp-card-meta">Hyderabad · Feb 2026 · Heritage Lens</div>
+          <div class="vp-card-desc">An epic documentation of a Telugu wedding spanning three days — kalyanam, naandi, reception — captured in breathtaking detail.</div>
+          <div class="vp-card-tags">
+            <span class="vp-tag">Telugu</span>
+            <span class="vp-tag">3-Day Event</span>
+          </div>
+        </div>
+        <div class="vp-person-strip">
+          <div class="vp-person-av" style="background:linear-gradient(135deg,#C8A050,#705010);">D</div>
+          <div class="vp-person-av vp-av-offset" style="background:linear-gradient(135deg,#5078C8,#103060);">S</div>
+          <div class="vp-person-info">
+            <div class="vp-person-name">Deepika &amp; Suresh Reddy</div>
+            <div class="vp-person-detail">Directed by Heritage Lens</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 8 · Vendor Promo ── -->
+    <div class="vp-card" data-cat="promo" onclick="openVideoModal(this)">
+      <div class="vp-card-inner">
+        <div class="vp-card-bg" style="background:linear-gradient(160deg,#0A2010,#040C06);"></div>
+        <div class="vp-card-media" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=80');"></div>
+        <div class="vp-card-overlay"></div>
+        <div class="vp-play-btn"><span>▶</span></div>
+        <div class="vp-card-duration">1:55</div>
+        <div class="vp-card-type promo-tag">Vendor Promo</div>
+        <div class="vp-card-body">
+          <div class="vp-card-title">Bloom &amp; Veil — The Art of Floral Design</div>
+          <div class="vp-card-meta">Delhi · Portfolio Showcase · 2025</div>
+          <div class="vp-card-desc">Watch India's leading floral artists transform spaces — mandap architecture, centrepieces, and the signature Bloom &amp; Veil wall installations.</div>
+          <div class="vp-card-tags">
+            <span class="vp-tag">Florals</span>
+            <span class="vp-tag">Décor</span>
+          </div>
+        </div>
+        <div class="vp-person-strip">
+          <div class="vp-person-av" style="background:linear-gradient(135deg,#78C850,#305010);">B</div>
+          <div class="vp-person-info" style="margin-left:4px;">
+            <div class="vp-person-name">Bloom &amp; Veil Florals</div>
+            <div class="vp-person-detail">Premium Wedding Décor · Delhi NCR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Card 9 · Destination ── -->
+    <div class="vp-card" data-cat="destination" onclick="openVideoModal(this)">
+      <div class="vp-card-inner">
+        <div class="vp-card-bg" style="background:linear-gradient(160deg,#3A1010,#1A0408);"></div>
+        <div class="vp-card-media" style="background-image:url('https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?w=700&q=80');"></div>
+        <div class="vp-card-overlay"></div>
+        <div class="vp-play-btn"><span>▶</span></div>
+        <div class="vp-card-duration">4:08</div>
+        <div class="vp-card-type destination-tag">Destination</div>
+        <div class="vp-card-body">
+          <div class="vp-card-title">Rhea &amp; Aditya — Maldives Barefoot Wedding</div>
+          <div class="vp-card-meta">Maldives · Mar 2026 · Island Lens</div>
+          <div class="vp-card-desc">An intimate elopement in the Maldives — just the two of them, a turquoise lagoon, and vows made at sunset over the Indian Ocean.</div>
+          <div class="vp-card-tags">
+            <span class="vp-tag">Elopement</span>
+            <span class="vp-tag">International</span>
+          </div>
+        </div>
+        <div class="vp-person-strip">
+          <div class="vp-person-av" style="background:linear-gradient(135deg,#C87898,#703050);">R</div>
+          <div class="vp-person-av vp-av-offset" style="background:linear-gradient(135deg,#78A8C8,#204860);">A</div>
+          <div class="vp-person-info">
+            <div class="vp-person-name">Rhea &amp; Aditya Sharma</div>
+            <div class="vp-person-detail">Directed by Island Lens</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /vp-grid -->
+</div><!-- /videos-page -->
+
+
+<!-- ══════════════════════════════════════
+     VIDEO DETAIL MODAL
+══════════════════════════════════════ -->
+<div id="video-modal" class="vm-backdrop">
+  <div class="vm-box">
+    <div id="vm-bg" class="vm-media">
+      <div class="vm-play-icon">▶</div>
+      <div id="vm-dur" class="vm-dur-badge"></div>
+    </div>
+    <div class="vm-body">
+      <div id="vm-type" class="vm-type-label"></div>
+      <div id="vm-title" class="vm-title"></div>
+      <div id="vm-meta" class="vm-meta"></div>
+      <div id="vm-desc" class="vm-desc"></div>
+      <div id="vm-person" class="vm-person"></div>
+    </div>
+    <button class="vm-close" onclick="closeVideoModal()">✕</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     MORE PLANNING TOOLS — FULL-PAGE MODAL OVERLAY
+     Opens when "More Planning Tools" button is clicked
+════════════════════════════════════════════════ -->
+<div id="more-tools-overlay">
+  <div class="mpt-page">
+
+    <!-- Modal Header -->
+    <div class="mpt-header">
+      <div class="mpt-header-left">
+        <div class="mpt-eyebrow">✦ Complete Suite</div>
+        <h2 class="mpt-title">All Planning <i>Tools</i></h2>
+        <p class="mpt-sub">Everything you need for a flawless celebration, in one place</p>
+      </div>
+      <button class="mpt-close" onclick="closeMPT()">✕ Close</button>
+    </div>
+
+    <!-- Decorative image strip — subtle right-aligned peek -->
+    <div class="mpt-img-strip">
+      <div class="mpt-img-strip-inner"></div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="mpt-search-bar">
+      <input
+        class="mpt-search"
+        type="text"
+        placeholder="🔍  Search tools…"
+        oninput="filterTools(this.value)"
+      />
+    </div>
+
+    <!-- Tools Grid -->
+    <div class="mpt-grid" id="mpt-grid">
+
+      <!-- 1. Wedding Checklist — Organisation -->
+      <div class="mpt-card" data-name="checklist wedding timeline organisation">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Organisation</div>
+        <div class="mpt-card-icon">✅</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Organisation</div>
+          <div class="mpt-card-name">Wedding Checklist</div>
+          <p class="mpt-card-desc">A month-by-month checklist covering every task from engagement to reception — never miss a milestone.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Wedding Checklist…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 2. Seating Chart — Guests -->
+      <div class="mpt-card" data-name="seating chart table arrangement guests">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Guests</div>
+        <div class="mpt-card-icon">🪑</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Guests</div>
+          <div class="mpt-card-name">Seating Chart Planner</div>
+          <p class="mpt-card-desc">Drag-and-drop table layout builder. Assign guests to seats, handle dietary preferences and family groups.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Seating Chart Planner…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 3. Digital Invitation — Invitations -->
+      <div class="mpt-card" data-name="invitation rsvp digital card invitations">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Invitations</div>
+        <div class="mpt-card-icon">✉️</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Invitations</div>
+          <div class="mpt-card-name">Digital Invitation Builder</div>
+          <p class="mpt-card-desc">Design multilingual e-invites with animations, RSVP forms, and WhatsApp / email delivery. 50+ templates.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Invitation Builder…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 4. Vendor Comparison — Vendors -->
+      <div class="mpt-card" data-name="vendor comparison shortlist vendors">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Vendors</div>
+        <div class="mpt-card-icon">⚖️</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Vendors</div>
+          <div class="mpt-card-name">Vendor Comparison Tool</div>
+          <p class="mpt-card-desc">Compare up to 5 vendors side-by-side on price, rating, availability, and portfolio highlights.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Vendor Comparison…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 5. Mood Board — Design -->
+      <div class="mpt-card" data-name="mood board décor theme inspiration design">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Design</div>
+        <div class="mpt-card-icon">🎨</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Design</div>
+          <div class="mpt-card-name">Mood Board Creator</div>
+          <p class="mpt-card-desc">Pin colour palettes, floral references, and décor images to build a visual brief for your vendors.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Mood Board Creator…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 6. Honeymoon — Travel -->
+      <div class="mpt-card" data-name="honeymoon travel itinerary packages">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Travel</div>
+        <div class="mpt-card-icon">✈️</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Travel</div>
+          <div class="mpt-card-name">Honeymoon Planner</div>
+          <p class="mpt-card-desc">Curate domestic & international honeymoon packages with exclusive wedding-couple discounts and itineraries.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Honeymoon Planner…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 7. Photo Book — Memories -->
+      <div class="mpt-card" data-name="photo book album printing memories">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Memories</div>
+        <div class="mpt-card-icon">📖</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Memories</div>
+          <div class="mpt-card-name">Photo Book Designer</div>
+          <p class="mpt-card-desc">Design lay-flat premium albums, fine-art prints, and custom hardcover books delivered to your door.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Photo Book Designer…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 8. Day-Of Timeline — Organisation -->
+      <div class="mpt-card" data-name="ceremony timeline schedule day-of organisation">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Organisation</div>
+        <div class="mpt-card-icon">🕐</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Organisation</div>
+          <div class="mpt-card-name">Day-Of Timeline Builder</div>
+          <p class="mpt-card-desc">Build a precise minute-by-minute schedule for the wedding day, shareable with all vendors instantly.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Timeline Builder…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 9. Contract Manager — Legal -->
+      <div class="mpt-card" data-name="contract document legal vendor agreement">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Legal</div>
+        <div class="mpt-card-icon">📝</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Legal</div>
+          <div class="mpt-card-name">Contract Manager</div>
+          <p class="mpt-card-desc">Store, review, and e-sign all vendor contracts in one secure place. Get alerts on key deadlines and clauses.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Contract Manager…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 10. Beauty & Styling — Beauty -->
+      <div class="mpt-card" data-name="makeup hair beauty artist stylist">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Beauty</div>
+        <div class="mpt-card-icon">💄</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Beauty</div>
+          <div class="mpt-card-name">Beauty &amp; Styling Planner</div>
+          <p class="mpt-card-desc">Shortlist makeup artists, hair stylists, and mehndi artists. Book trials and confirm looks before the big day.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Beauty Planner…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 11. Menu Planner — Catering -->
+      <div class="mpt-card" data-name="catering menu food taste testing">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Catering</div>
+        <div class="mpt-card-icon">🍽️</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Catering</div>
+          <div class="mpt-card-name">Menu Planner</div>
+          <p class="mpt-card-desc">Design multi-course menus, plan live stations, manage dietary preferences, and schedule tasting sessions.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Menu Planner…')">Open Tool →</button>
+        </div>
+      </div>
+
+      <!-- 12. Entertainment — Music -->
+      <div class="mpt-card" data-name="music playlist entertainment DJ band">
+        <div class="mpt-card-bg" style="background-image:url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80&auto=format&fit=crop')"></div>
+        <div class="mpt-card-overlay"></div>
+        <div class="mpt-card-cat-badge">Entertainment</div>
+        <div class="mpt-card-icon">🎵</div>
+        <div class="mpt-card-body">
+          <div class="mpt-card-cat">Entertainment</div>
+          <div class="mpt-card-name">Music &amp; Entertainment Planner</div>
+          <p class="mpt-card-desc">Build ceremony and reception playlists, book DJs or live bands, and schedule performance timings.</p>
+          <button class="mpt-card-btn" onclick="alert('Opening Entertainment Planner…')">Open Tool →</button>
+        </div>
+      </div>
+
+    </div><!-- /mpt-grid -->
+  </div><!-- /mpt-page -->
+</div><!-- /more-tools-overlay -->
+
+
+<!-- ══════════════════════════════════════════════
+     PLANNING TOOLS SECTION  (Section 06)
+════════════════════════════════════════════════ -->
+<section class="section" id="tools">
+
+  <!-- Section Header -->
+  <div class="s-head">
+    <div class="s-head-left">
+      <div class="s-num" style="color: var(--gold);"></div>
+      <h2 class="s-title">Planning <i>Tools</i></h2>
+      <p class="s-subtitle">Budget calculator, guest list manager &amp; booking tracker — all in one place</p>
+    </div>
+    <!-- ★ More Planning Tools button ★ -->
+    <button class="more-tools-btn" onclick="openMPT()">
+      ✦ More Planning Tools
+    </button>
+  </div>
+
+  <!-- Tab Switcher -->
+  <div class="tools-tabs">
+    <button class="tool-tab active" onclick="switchTab('budget-tool', this)">💰 Budget Calculator</button>
+    <button class="tool-tab"        onclick="switchTab('guest-tool',  this)">👥 Guest List Manager</button>
+    <button class="tool-tab"        onclick="switchTab('track-tool',  this)">📦 Track Bookings</button>
+  </div>
+
+  <!-- ── Panel 1: Budget Calculator ── -->
+  <div class="tool-panel active" id="budget-tool">
+
+    <!-- Stat Cards -->
+    <div class="budget-stats">
+      <div class="budget-stat-card gold">
+        <div class="stat-label">Total Budget</div>
+        <div class="stat-value onyx">₹15,00,000</div>
+      </div>
+      <div class="budget-stat-card green">
+        <div class="stat-label">Allocated</div>
+        <div class="stat-value green">₹10,80,000</div>
+      </div>
+      <div class="budget-stat-card rose">
+        <div class="stat-label">Remaining</div>
+        <div class="stat-value rose">₹4,20,000</div>
+      </div>
+    </div>
+
+    <!-- Breakdown Table -->
+    <table class="budget-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th style="text-align:right">Allocated</th>
+          <th style="text-align:right">Spent</th>
+          <th style="text-align:right">Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🕌 Venue</td>
+          <td>₹5,00,000</td>
+          <td class="td-green">₹4,50,000</td>
+          <td>₹50,000</td>
+        </tr>
+        <tr>
+          <td>📸 Photography</td>
+          <td>₹2,00,000</td>
+          <td class="td-green">₹2,00,000</td>
+          <td class="td-red">₹0</td>
+        </tr>
+        <tr>
+          <td>🌸 Décor</td>
+          <td>₹1,50,000</td>
+          <td class="td-amber">₹90,000</td>
+          <td>₹60,000</td>
+        </tr>
+        <tr>
+          <td>👗 Couture</td>
+          <td>₹2,30,000</td>
+          <td class="td-amber">₹1,40,000</td>
+          <td>₹90,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Panel 2: Guest List Manager ── -->
+  <div class="tool-panel" id="guest-tool">
+
+    <div class="guest-controls">
+      <input class="form-input" style="flex:1;min-width:180px" placeholder="Guest name"/>
+      <input class="form-input" style="flex:1;min-width:140px" placeholder="Mobile number"/>
+      <select class="form-select" style="flex:1;min-width:120px">
+        <option>Side: Bride</option>
+        <option>Side: Groom</option>
+        <option>Both</option>
+      </select>
+      <button class="btn-gold" onclick="alert('Guest added!')">+ Add Guest</button>
+    </div>
+
+    <table class="guest-table">
+      <thead>
+        <tr>
+          <th>#</th><th>Name</th><th>Side</th>
+          <th>Meal Pref</th><th>RSVP</th><th>Table</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Ananya Sharma</td><td>Bride</td><td>Veg</td>    <td><span class="status-pill s-confirmed">Confirmed</span></td><td>A-4</td></tr>
+        <tr><td>2</td><td>Rahul Mehta</td>  <td>Groom</td><td>Non-Veg</td><td><span class="status-pill s-confirmed">Confirmed</span></td><td>B-2</td></tr>
+        <tr><td>3</td><td>Priya Kapoor</td> <td>Bride</td><td>Jain</td>   <td><span class="status-pill s-pending">Pending</span></td>  <td>—</td></tr>
+        <tr><td>4</td><td>Vikram Singh</td> <td>Groom</td><td>Veg</td>    <td><span class="status-pill s-confirmed">Confirmed</span></td><td>C-1</td></tr>
+        <tr><td>5</td><td>Sunita Reddy</td> <td>Both</td> <td>Non-Veg</td><td><span class="status-pill s-declined">Declined</span></td> <td>—</td></tr>
+      </tbody>
+    </table>
+
+    <div class="guest-actions">
+      <button class="add-row-btn" onclick="alert('Row added!')">+ Add More Guests</button>
+      <button class="add-row-btn" onclick="alert('Exported to Excel!')">↓ Export List</button>
+      <button class="add-row-btn" onclick="alert('RSVP links sent via WhatsApp!')">✉ Send RSVP Links</button>
+    </div>
+  </div>
+
+  <!-- ── Panel 3: Track Bookings ── -->
+  <div class="tool-panel" id="track-tool">
+    <div style="overflow-x:auto;">
+      <div style="min-width:600px;">
+        <div class="track-header">
+          <div>ID</div>
+          <div>Vendor</div>
+          <div>Date</div>
+          <div>Amount</div>
+          <div>Paid</div>
+          <div>Status</div>
+        </div>
+        <div class="track-row">
+          <div class="track-id">#1042</div>
+          <div>🕌 Amer Palace, Jaipur</div>
+          <div>Dec 14, 2025</div>
+          <div>₹5,00,000</div>
+          <div class="track-paid-green">₹1,50,000</div>
+          <div><span class="status-pill s-confirmed">Confirmed</span></div>
+        </div>
+        <div class="track-row">
+          <div class="track-id">#1043</div>
+          <div>📸 Rajan &amp; Co. Studios</div>
+          <div>Dec 14, 2025</div>
+          <div>₹2,00,000</div>
+          <div class="track-paid-green">₹2,00,000</div>
+          <div><span class="status-pill s-confirmed">Confirmed</span></div>
+        </div>
+        <div class="track-row">
+          <div class="track-id">#1044</div>
+          <div>🌸 Bloom &amp; Veil Florals</div>
+          <div>Dec 14, 2025</div>
+          <div>₹90,000</div>
+          <div class="track-paid-amber">₹27,000</div>
+          <div><span class="status-pill s-pending">Pending</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section><!-- /#tools -->
+
+
+<!-- ══════════════════════════════════════════════
+     HONEYMOON PACKAGES — MAIN SECTION
+     ══════════════════════════════════════════════ -->
+<section id="packages">
+
+  <!-- Section Header -->
+  <div class="s-head">
+    <div class="s-head-left">
+      <div class="s-num"></div>
+      <h2 class="s-title">Honeymoon <i>Packages</i></h2>
+      <p class="s-subtitle">Curated escapes for the newly married — exclusive wedding rates</p>
+    </div>
+
+    <!-- Top-right action buttons -->
+    <div class="honey-header-actions">
+      <button class="pkg-list-btn" onclick="openPkgPage()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <rect x="1" y="2.5"  width="12" height="1.5" rx=".75" fill="currentColor"/>
+          <rect x="1" y="6.25" width="9"  height="1.5" rx=".75" fill="currentColor"/>
+          <rect x="1" y="10"   width="10.5" height="1.5" rx=".75" fill="currentColor"/>
+        </svg>
+        Package List
+      </button>
+    
+    </div>
+  </div>
+
+  <!-- Main 4 Cards Grid -->
+  <div class="honey-grid">
+
+    <!-- Card 1 : Maldives -->
+    <div class="honey-card">
+      <div class="honey-inner" style="background-image:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80');background-size:cover;background-position:center;">
+        <div class="honey-overlay"></div>
+        <div class="honey-tag">⭐ Best Seller</div>
+        <div class="honey-heart" onclick="toggleHeart(this)">♡</div>
+        <div class="honey-info">
+          <div class="honey-nights">5 Nights · Maldives</div>
+          <div class="honey-dest">Paradise Atoll</div>
+          <div class="honey-from">From <strong>₹1,20,000</strong>/couple</div>
+        </div>
+        <div class="honey-cta">Explore Package →</div>
+      </div>
+    </div>
+
+    <!-- Card 2 : Bali -->
+    <div class="honey-card">
+      <div class="honey-inner" style="background-image:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80');background-size:cover;background-position:center;">
+        <div class="honey-overlay"></div>
+        <div class="honey-tag" style="background:rgba(236,72,153,.85);color:#fff;">🌺 Romantic</div>
+        <div class="honey-heart" onclick="toggleHeart(this)">♡</div>
+        <div class="honey-info">
+          <div class="honey-nights">4 Nights · Bali</div>
+          <div class="honey-dest">Ubud &amp; Seminyak</div>
+          <div class="honey-from">From <strong>₹85,000</strong>/couple</div>
+        </div>
+        <div class="honey-cta">Explore Package →</div>
+      </div>
+    </div>
+
+    <!-- Card 3 : Europe -->
+    <div class="honey-card">
+      <div class="honey-inner" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80');background-size:cover;background-position:center;">
+        <div class="honey-overlay"></div>
+        <div class="honey-tag" style="background:rgba(99,102,241,.85);color:#fff;">🗼 Adventure</div>
+        <div class="honey-heart" onclick="toggleHeart(this)">♡</div>
+        <div class="honey-info">
+          <div class="honey-nights">6 Nights · Europe</div>
+          <div class="honey-dest">Paris &amp; Swiss Alps</div>
+          <div class="honey-from">From <strong>₹2,50,000</strong>/couple</div>
+        </div>
+        <div class="honey-cta">Explore Package →</div>
+      </div>
+    </div>
+
+    <!-- Card 4 : Udaipur -->
+    <div class="honey-card">
+      <div class="honey-inner" style="background-image:url('https://images.unsplash.com/photo-1590350456474-7e7a38ad6226?w=800&q=80');background-size:cover;background-position:center;">
+        <div class="honey-overlay"></div>
+        <div class="honey-tag" style="background:rgba(180,83,9,.85);color:#fff;">🏰 Heritage</div>
+        <div class="honey-heart" onclick="toggleHeart(this)">♡</div>
+        <div class="honey-info">
+          <div class="honey-nights">4 Nights · Domestic</div>
+          <div class="honey-dest">Udaipur Royal</div>
+          <div class="honey-from">From <strong>₹45,000</strong>/couple</div>
+        </div>
+        <div class="honey-cta">Explore Package →</div>
+      </div>
+    </div>
+
+  </div><!-- /.honey-grid -->
+</section>
+
+<div id="pkg-overlay" aria-modal="true" role="dialog" aria-label="All Honeymoon Packages">
+
+  <!-- Close Button -->
+  <button class="pkg-overlay-close" onclick="closePkgPage()" title="Close (Esc)">✕</button>
+
+  <div class="pkg-overlay-inner">
+
+    <!-- Header -->
+    <div class="pkg-overlay-header">
+      <div class="pkg-overlay-eyebrow">✦ Curated Escapes ✦</div>
+      <h1 class="pkg-overlay-title">All Honeymoon <i>Packages</i></h1>
+      <p class="pkg-overlay-subtitle">Exclusive rates for newly married couples. Each package includes hotel stays, transfers, and surprise romantic touches.</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div id="pkg-filter-bar">
+      <button class="pkg-filter active" onclick="filterPkgs(this,'all')">All</button>
+      <button class="pkg-filter" onclick="filterPkgs(this,'domestic')">🏰 Domestic</button>
+      <button class="pkg-filter" onclick="filterPkgs(this,'international')">✈️ International</button>
+      <button class="pkg-filter" onclick="filterPkgs(this,'beach')">🌊 Beach &amp; Islands</button>
+      <button class="pkg-filter" onclick="filterPkgs(this,'adventure')">🏔️ Adventure</button>
+      <button class="pkg-filter" onclick="filterPkgs(this,'luxury')">👑 Luxury</button>
+    </div>
+
+    <!-- Packages Grid -->
+    <div id="pkg-grid">
+
+      <!-- ── Card 1 · Maldives ── -->
+      <div class="pkg-card" data-cat="international beach luxury">
+        <div class="pkg-card-img">
+          <div class="pkg-card-img-bg" style="background-image:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700&q=80');opacity:.7;"></div>
+          <div class="pkg-card-img-gradient"></div>
+          <span class="pkg-card-badge" style="background:rgba(191,155,92,.9);color:#0d0b07;">⭐ Best Seller</span>
+          <span class="pkg-card-heart" onclick="toggleHeart(this)">♡</span>
+          <div class="pkg-card-location">
+            <div class="pkg-card-nights">5 Nights · Maldives</div>
+            <div class="pkg-card-dest">Paradise Atoll</div>
+          </div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-tag-row">
+            <span class="pkg-tag">🌊 Beach</span>
+            <span class="pkg-tag">🛥️ Water Villa</span>
+            <span class="pkg-tag">🍽️ All-inclusive</span>
+          </div>
+          <p class="pkg-card-desc">Overwater bungalows, private lagoon access, sunrise breakfast, snorkelling tour &amp; couples spa.</p>
+          <div class="pkg-card-footer">
+            <div>
+              <div class="pkg-price-from">From</div>
+              <div class="pkg-price-val">₹1,20,000<span class="pkg-price-per">/couple</span></div>
+            </div>
+            <button class="pkg-book-btn" onclick="alert('Booking Maldives package...')">Book Now →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 2 · Bali ── -->
+      <div class="pkg-card" data-cat="international beach">
+        <div class="pkg-card-img">
+          <div class="pkg-card-img-bg" style="background-image:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80');opacity:.75;"></div>
+          <div class="pkg-card-img-gradient"></div>
+          <span class="pkg-card-badge" style="background:rgba(236,72,153,.8);color:#fff;">🌺 Romantic</span>
+          <span class="pkg-card-heart" onclick="toggleHeart(this)">♡</span>
+          <div class="pkg-card-location">
+            <div class="pkg-card-nights">4 Nights · Bali</div>
+            <div class="pkg-card-dest">Ubud &amp; Seminyak</div>
+          </div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-tag-row">
+            <span class="pkg-tag">🌿 Rice Fields</span>
+            <span class="pkg-tag">🧖 Spa</span>
+            <span class="pkg-tag">🌅 Sunset Cruise</span>
+          </div>
+          <p class="pkg-card-desc">Jungle hideaway villa, Tegalalang rice terraces tour, traditional Balinese couples massage &amp; sunset dinner.</p>
+          <div class="pkg-card-footer">
+            <div>
+              <div class="pkg-price-from">From</div>
+              <div class="pkg-price-val">₹85,000<span class="pkg-price-per">/couple</span></div>
+            </div>
+            <button class="pkg-book-btn" onclick="alert('Booking Bali package...')">Book Now →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 3 · Europe ── -->
+      <div class="pkg-card" data-cat="international adventure luxury">
+        <div class="pkg-card-img">
+          <div class="pkg-card-img-bg" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&q=80');opacity:.7;"></div>
+          <div class="pkg-card-img-gradient"></div>
+          <span class="pkg-card-badge" style="background:rgba(99,102,241,.85);color:#fff;">🗼 Adventure</span>
+          <span class="pkg-card-heart" onclick="toggleHeart(this)">♡</span>
+          <div class="pkg-card-location">
+            <div class="pkg-card-nights">6 Nights · Europe</div>
+            <div class="pkg-card-dest">Paris &amp; Swiss Alps</div>
+          </div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-tag-row">
+            <span class="pkg-tag">🗼 Eiffel Tower</span>
+            <span class="pkg-tag">🏔️ Swiss Alps</span>
+            <span class="pkg-tag">🍷 Fine Dining</span>
+          </div>
+          <p class="pkg-card-desc">Paris Seine dinner cruise, Louvre tour, scenic Swiss Alps train ride, luxury chalet stay &amp; champagne welcome.</p>
+          <div class="pkg-card-footer">
+            <div>
+              <div class="pkg-price-from">From</div>
+              <div class="pkg-price-val">₹2,50,000<span class="pkg-price-per">/couple</span></div>
+            </div>
+            <button class="pkg-book-btn" onclick="alert('Booking Europe package...')">Book Now →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 4 · Udaipur ── -->
+      <div class="pkg-card" data-cat="domestic luxury">
+        <div class="pkg-card-img">
+          <div class="pkg-card-img-bg" style="background-image:url('https://images.unsplash.com/photo-1590350456474-7e7a38ad6226?w=700&q=80');opacity:.75;"></div>
+          <div class="pkg-card-img-gradient"></div>
+          <span class="pkg-card-badge" style="background:rgba(180,83,9,.85);color:#fff;">🏰 Heritage</span>
+          <span class="pkg-card-heart" onclick="toggleHeart(this)">♡</span>
+          <div class="pkg-card-location">
+            <div class="pkg-card-nights">4 Nights · Domestic</div>
+            <div class="pkg-card-dest">Udaipur Royal</div>
+          </div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-tag-row">
+            <span class="pkg-tag">🏛️ Palace Stay</span>
+            <span class="pkg-tag">🚤 Lake Pichola</span>
+            <span class="pkg-tag">🌙 Candlelit Dinner</span>
+          </div>
+          <p class="pkg-card-desc">Heritage palace room, private Lake Pichola boat ride, royal Rajasthani dinner &amp; cultural folk show.</p>
+          <div class="pkg-card-footer">
+            <div>
+              <div class="pkg-price-from">From</div>
+              <div class="pkg-price-val">₹45,000<span class="pkg-price-per">/couple</span></div>
+            </div>
+            <button class="pkg-book-btn" onclick="alert('Booking Udaipur package...')">Book Now →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 5 · Kerala ── -->
+      <div class="pkg-card" data-cat="domestic beach">
+        <div class="pkg-card-img">
+          <div class="pkg-card-img-bg" style="background-image:url('https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/12/20135743/alleppey.jpg?tr=w-700');opacity:.75;"></div>
+          <div class="pkg-card-img-gradient"></div>
+          <span class="pkg-card-badge" style="background:rgba(5,150,105,.85);color:#fff;">🌿 Nature</span>
+          <span class="pkg-card-heart" onclick="toggleHeart(this)">♡</span>
+          <div class="pkg-card-location">
+            <div class="pkg-card-nights">5 Nights · Kerala</div>
+            <div class="pkg-card-dest">Backwater Bliss</div>
+          </div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-tag-row">
+            <span class="pkg-tag">🚢 Houseboat</span>
+            <span class="pkg-tag">🌴 Ayurveda</span>
+            <span class="pkg-tag">🐘 Elephant Ride</span>
+          </div>
+          <p class="pkg-card-desc">Private houseboat on Alleppey, Ayurvedic spa, Munnar tea garden walk, sunrise kayak &amp; traditional Kerala feast.</p>
+          <div class="pkg-card-footer">
+            <div>
+              <div class="pkg-price-from">From</div>
+              <div class="pkg-price-val">₹55,000<span class="pkg-price-per">/couple</span></div>
+            </div>
+            <button class="pkg-book-btn" onclick="alert('Booking Kerala package...')">Book Now →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 6 · Santorini ── -->
+      <div class="pkg-card" data-cat="international beach luxury">
+        <div class="pkg-card-img">
+          <div class="pkg-card-img-bg" style="background-image:url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=700&q=80');opacity:.75;"></div>
+          <div class="pkg-card-img-gradient"></div>
+          <span class="pkg-card-badge" style="background:rgba(37,99,235,.85);color:#fff;">💎 Premium</span>
+          <span class="pkg-card-heart" onclick="toggleHeart(this)">♡</span>
+          <div class="pkg-card-location">
+            <div class="pkg-card-nights">6 Nights · Greece</div>
+            <div class="pkg-card-dest">Santorini Dream</div>
+          </div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-tag-row">
+            <span class="pkg-tag">🌅 Caldera Views</span>
+            <span class="pkg-tag">🚢 Yacht Tour</span>
+            <span class="pkg-tag">🍷 Wine Tasting</span>
+          </div>
+          <p class="pkg-card-desc">Cave suite with infinity pool, private caldera sunset yacht, Oia village stroll &amp; Greek cooking class.</p>
+          <div class="pkg-card-footer">
+            <div>
+              <div class="pkg-price-from">From</div>
+              <div class="pkg-price-val">₹2,80,000<span class="pkg-price-per">/couple</span></div>
+            </div>
+            <button class="pkg-book-btn" onclick="alert('Booking Santorini package...')">Book Now →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 7 · Andaman ── -->
+      <div class="pkg-card" data-cat="domestic beach adventure">
+        <div class="pkg-card-img">
+          <div class="pkg-card-img-bg" style="background-image:url('https://images.unsplash.com/photo-1583422409516-2895a77efded?w=700&q=80');opacity:.75;"></div>
+          <div class="pkg-card-img-gradient"></div>
+          <span class="pkg-card-badge" style="background:rgba(8,145,178,.85);color:#fff;">🐠 Island</span>
+          <span class="pkg-card-heart" onclick="toggleHeart(this)">♡</span>
+          <div class="pkg-card-location">
+            <div class="pkg-card-nights">5 Nights · Andaman</div>
+            <div class="pkg-card-dest">Island Getaway</div>
+          </div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-tag-row">
+            <span class="pkg-tag">🤿 Scuba Diving</span>
+            <span class="pkg-tag">🏝️ Radhanagar</span>
+            <span class="pkg-tag">🌊 Sea Walk</span>
+          </div>
+          <p class="pkg-card-desc">Beach resort stay, scuba diving lesson, glass-bottom boat ride, Radhanagar Beach sunset &amp; bioluminescent sea kayak.</p>
+          <div class="pkg-card-footer">
+            <div>
+              <div class="pkg-price-from">From</div>
+              <div class="pkg-price-val">₹65,000<span class="pkg-price-per">/couple</span></div>
+            </div>
+            <button class="pkg-book-btn" onclick="alert('Booking Andaman package...')">Book Now →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 8 · Dubai ── -->
+      <div class="pkg-card" data-cat="international luxury">
+        <div class="pkg-card-img">
+          <div class="pkg-card-img-bg" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&q=80');opacity:.7;"></div>
+          <div class="pkg-card-img-gradient"></div>
+          <span class="pkg-card-badge" style="background:rgba(217,119,6,.85);color:#fff;">👑 Ultra Luxury</span>
+          <span class="pkg-card-heart" onclick="toggleHeart(this)">♡</span>
+          <div class="pkg-card-location">
+            <div class="pkg-card-nights">4 Nights · Dubai</div>
+            <div class="pkg-card-dest">Dubai Opulence</div>
+          </div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-tag-row">
+            <span class="pkg-tag">🌆 Burj Khalifa</span>
+            <span class="pkg-tag">🛍️ Gold Souk</span>
+            <span class="pkg-tag">🏜️ Desert Safari</span>
+          </div>
+          <p class="pkg-card-desc">Burj Al Arab upgrade, desert dune bashing, Old Dubai spice souk visit, Burj Khalifa dinner &amp; dhow cruise.</p>
+          <div class="pkg-card-footer">
+            <div>
+              <div class="pkg-price-from">From</div>
+              <div class="pkg-price-val">₹1,80,000<span class="pkg-price-per">/couple</span></div>
+            </div>
+            <button class="pkg-book-btn" onclick="alert('Booking Dubai package...')">Book Now →</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /#pkg-grid -->
+
+    <!-- CTA Strip -->
+    <div class="pkg-cta-strip">
+      <div class="pkg-cta-title">Can't find your dream destination?</div>
+      <p class="pkg-cta-sub">Our travel experts will craft a bespoke honeymoon itinerary just for you.</p>
+      <button class="btn-gold" onclick="alert('Opening custom package request...')">✦ Request Custom Package</button>
+    </div>
+
+  </div><!-- /.pkg-overlay-inner -->
+</div><!-- /#pkg-overlay -->
+</body>
+</html>
